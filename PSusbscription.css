@@ -1,0 +1,24 @@
+body {
+  background-color: white;
+  background-image: url(/PBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text {
+  color: white;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.images {
+  height: 20rem;
+  border: 0.4rem solid black; /* Border color and thickness */
+  border-radius: 10rem; /* Border radius for rounded corners */
+  padding: 0px;
+}
+
+ul.text li {
+  /* display: inline-block; */
+  margin-right: 50px;
+}
