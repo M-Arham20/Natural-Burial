@@ -1,71 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Natural Burial</title>
-</head>
-<body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to speak the text using Web Speech API
+        function speak(text) {
+          const synth = window.speechSynthesis;
+          const utterance = new SpeechSynthesisUtterance(text);
+          synth.speak(utterance);
+        }
 
-<!--Added green color to get an idea of the height and width of header-->
-<div style="background-color:green ; padding: 10px; text-align: left; height: 125px;">
-    <img src="/Home_Page/Green Elegant Natural Environment Logo.png" alt="logo" style="height: 125px; width: auto;">
-</div>
+        // Function to handle mouseover events and trigger speech after 5 seconds
+        function handleMouseoverEvent(elementSelector) {
+          const elements = document.querySelectorAll(elementSelector);
+          let timeout;
 
+          elements.forEach((element) => {
+            element.addEventListener("mouseover", function () {
+              timeout = setTimeout(() => {
+                speak(this.textContent);
+              }, 1000);
+            });
 
-<div style="padding:10px">
-    <h1>Personal Info:</h1>
-    <p></p>
-</div>
+            element.addEventListener("mouseout", function () {
+              clearTimeout(timeout);
+            });
+          });
+        }
 
-<form action="/submit_answers" method="POST">
-    <label for="name1">Surname (last name) of the deceased person (according to the act of birth) *</label><br>
-    <input type="text" id="name1" name="name1" size="80" required><br><br>
+        // Call the function to handle mouseover events for specific elements
+        handleMouseoverEvent("h1, label, p, .box, footer p");
+      });
+    </script>
+  </head>
+  <body>
+    <!--Added green color to get an idea of the height and width of header-->
+    <div
+      style="
+        background-color: green;
+        padding: 10px;
+        text-align: left;
+        height: 125px;
+      "
+    >
+      <img
+        src="/Home_Page/Green Elegant Natural Environment Logo.png"
+        alt="logo"
+        style="height: 125px; width: auto"
+      />
+    </div>
 
-    <label for="name2">Middle name(s) of the deceased person (according to the act of birth) *</label><br>
-    <input type="text" id="name2" name="name2" size="80"><br><br>
-    
-    <label for="name3">Name (first name) of the deceased person (according to the act of birth) *</label><br>
-    <input type="text" id="name3" name="name3" size="80" required><br><br>
+    <div style="padding: 10px">
+      <h1>Personal Info:</h1>
+      <p></p>
+    </div>
 
-    <label for="dob">Date of birth of the deceased person</label><br>
-    <input type="date" id="dob" name="dob" size="80" required><br><br>
+    <form action="/submit_answers" method="POST">
+      <label for="name1"
+        >Surname (last name) of the deceased person (according to the act of
+        birth) *</label
+      ><br />
+      <input
+        type="text"
+        id="name1"
+        name="name1"
+        size="80"
+        required
+      /><br /><br />
 
-    <label for="dod">Date of death of the deceased person</label><br>
-    <input type="date" id="dod" name="dod" size="80" required><br><br>
+      <label for="name2"
+        >Middle name(s) of the deceased person (according to the act of birth)
+        *</label
+      ><br />
+      <input type="text" id="name2" name="name2" size="80" /><br /><br />
 
-    <label for="place">Place of Death:</label><br>
-    <input type="text" id="place" name="place" size="80" required><br><br>
+      <label for="name3"
+        >Name (first name) of the deceased person (according to the act of
+        birth) *</label
+      ><br />
+      <input
+        type="text"
+        id="name3"
+        name="name3"
+        size="80"
+        required
+      /><br /><br />
 
-    <input type="submit" value="Submit">
-</form>
+      <label for="dob">Date of birth of the deceased person</label><br />
+      <input type="date" id="dob" name="dob" size="80" required /><br /><br />
 
-<div class="box">
-    <a href="/Basic_Subscription/BasicSubscription.html">
+      <label for="dod">Date of death of the deceased person</label><br />
+      <input type="date" id="dod" name="dod" size="80" required /><br /><br />
+
+      <label for="place">Place of Death:</label><br />
+      <input
+        type="text"
+        id="place"
+        name="place"
+        size="80"
+        required
+      /><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <div class="box">
+      <a href="/Basic_Subscription/BasicSubscription.html">
         <h2>Basic</h2>
         <p>This box leads to Basic Subscription</p>
-    </a>
-</div>
+      </a>
+    </div>
 
-<div class="box">
-    <a href="/Standard_Subscription/StandardSubscription.html">
+    <div class="box">
+      <a href="/Standard_Subscription/StandardSubscription.html">
         <h2>Standard</h2>
         <p>This box leads to Standard Subscription</p>
-    </a>
-</div>
+      </a>
+    </div>
 
-<div>
-    <a href="/Premium_Subscription/PremiumSubscription.html">
+    <div>
+      <a href="/Premium_Subscription/PremiumSubscription.html">
         <h2>Premium</h2>
         <p>This box leads to Premium Subscription</p>
-    </a>
-</div>
-</body>
+      </a>
+    </div>
+  </body>
 
-<footer>
+  <footer>
     <!--Added green color to get an idea of the height and width of footer-->
-    <div style="background-color:green ; padding: 10px; text-align: left; height: 100px;">
-       <p>&copy; Natural Burrial (FOOTER)</p>
-    </div>   
-</footer>
+    <div
+      style="
+        background-color: green;
+        padding: 10px;
+        text-align: left;
+        height: 100px;
+      "
+    >
+      <p>&copy; Natural Burrial (FOOTER)</p>
+    </div>
+  </footer>
 </html>
