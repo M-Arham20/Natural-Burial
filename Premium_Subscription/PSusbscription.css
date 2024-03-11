@@ -1,13 +1,13 @@
 body {
   /* background-color: white; */
-  background-image: url(/Premium_Subscription/PBackground.jpg);
+  background-color: lightblue;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .text {
-  color: white;
-  font-size: 40px;
+  color: black;
+  font-size: 2.7em;
   font-family: sans-serif;
 }
 
