@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Natural Burial</title>
+    <link rel="stylesheet" href="home.css" />
     <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Function to speak the text using Web Speech API
@@ -36,7 +37,7 @@
       });
     </script> -->
   </head>
-  <body style="background-color: lightblue">
+  <body>
     <!--Added green color to get an idea of the height and width of header-->
     <div
       style="
@@ -52,71 +53,87 @@
         style="height: 9.5em; width: 9.5em"
       />
     </div>
+    <div style="padding: 0.1em;padding-left: 11em;">
+      <h1 style="font-size: 2.5em">Choose your plan</h1>
+    </div>
+    <div class="box">
+      <a href="/Basic_Subscription/BasicSubscription.html">
+        <h2>Basic</h2>
+        <p>This box leads to Basic Subscription</p>
+      </a>
+    </div>
 
+    <div class="box">
+      <a href="/Standard_Subscription/StandardSubscription.html">
+        <h2>Standard</h2>
+        <p>This box leads to Standard Subscription</p>
+      </a>
+    </div>
+
+    <div class="box">
+      <a href="/Premium_Subscription/PremiumSubscription.html">
+        <h2>Premium</h2>
+        <p>This box leads to Premium Subscription</p>
+      </a>
+    </div>
     <div style="padding: 0.1em">
-      <h1 style="font-size: 2.5em">Personal Info:</h1>
+      <h1 style="font-size: 2.5em">
+        Personal Info of deceased: according to the act of birth
+      </h1>
     </div>
 
     <form action="/submit_answers" method="POST">
-      <label for="surname" style="font-size: 2.7em"
-        >Surname (last name) of the deceased person (according to the act of
-        birth) *</label
-      ><br />
+      <label for="surname" style="font-size: 2.7em">Last Name !</label
+      ><br /><br />
       <input
         type="text"
         id="surname"
         name="surname"
-        size="80"
+        size="20"
         required
-        style="font-size: 2em"
+        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
 
       <label for="middleName" style="font-size: 2.7em"
-        >Middle name(s) of the deceased person (according to the act of birth) </label
+        >Middle name(s)<br /> </label
       ><br />
       <input
         type="text"
         id="middleName"
         name="middleName"
-        size="80"
-        style="font-size: 2em"
+        size="20"
+        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
 
-      <label for="firstName" style="font-size: 2.7em"
-        >Name (first name) of the deceased person (according to the act of
-        birth) *</label
+      <label for="firstName" style="font-size: 2.7em"> First Name <br /></label
       ><br />
       <input
         type="text"
         id="firstName"
         name="firstName"
-        size="80"
+        size="20"
         required
-        style="font-size: 2em"
+        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
 
-      <label for="dob" style="font-size: 2.7em"
-        >Date of birth of the deceased person</label
+      <label for="dob" style="font-size: 2.7em">Date of birth <br /></label
       ><br />
       <input
         type="date"
         id="dob"
         name="dob"
-        size="80"
         required
-        style="font-size: 2em"
+        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
 
-      <label for="dod" style="font-size: 2.7em"
-        >Date of death of the deceased person</label
+      <label for="dod" style="font-size: 2.7em">Date of death<br /> </label
       ><br />
       <input
         type="date"
         id="dod"
         name="dod"
-        size="80"
         required
-        style="font-size: 2em"
+        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
 
       <label for="place" style="font-size: 2.7em">Place of Death:</label><br />
@@ -124,34 +141,12 @@
         type="text"
         id="place"
         name="place"
-        size="80"
+        size="40"
         required
-        style="font-size: 2em"
+        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
-
-      <input type="submit" value="Submit" style="font-size: 2em" />
+      <button class="submit">Submit Form</button>
     </form>
-
-    <div class="box" style="font-size: 2em">
-      <a href="/Basic_Subscription/BasicSubscription.html">
-        <h2>Basic</h2>
-        <p>This box leads to Basic Subscription</p>
-      </a>
-    </div>
-
-    <div class="box" style="font-size: 2em">
-      <a href="/Standard_Subscription/StandardSubscription.html">
-        <h2>Standard</h2>
-        <p>This box leads to Standard Subscription</p>
-      </a>
-    </div>
-
-    <div style="font-size: 2em">
-      <a href="/Premium_Subscription/PremiumSubscription.html">
-        <h2>Premium</h2>
-        <p>This box leads to Premium Subscription</p>
-      </a>
-    </div>
   </body>
 
   <footer>

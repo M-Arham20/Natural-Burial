@@ -1,0 +1,21 @@
+.box{
+    margin-top: 0.5em;
+    border:solid;
+    font-size: 2em;
+    width:20em;
+    text-align: center;
+    cursor:pointer;
+    margin-bottom: 1em;
+}
+box:hover{
+
+}
+.submit{
+    border:solid;
+    padding: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor:pointer;
+    margin-bottom:1em;
+    
+}
