@@ -36,25 +36,20 @@
         handleMouseoverEvent("h1, label, p, .box, footer p");
       });
     </script> -->
+    <script src="home.js"></script>
   </head>
   <body>
     <!--Added green color to get an idea of the height and width of header-->
-    <div
-      style="
-        background-color: rgb(88, 225, 88);
-        padding: 0.8em;
-        text-align: left;
-        height: 9.5rem;
-      "
-    >
+    <div class="Header">
       <img
         src="/Home_Page/Green Elegant Natural Environment Logo.png"
         alt="logo"
         style="height: 9.5em; width: 9.5em"
       />
     </div>
-    <div style="padding: 0.1em;padding-left: 11em;">
-      <h1 style="font-size: 2.5em">Choose your plan</h1>
+
+    <div class="heading">
+      <h1>Choose your plan</h1>
     </div>
     <div class="box">
       <a href="/Basic_Subscription/BasicSubscription.html">
@@ -83,67 +78,198 @@
     </div>
 
     <form action="/submit_answers" method="POST">
-      <label for="surname" style="font-size: 2.7em">Last Name !</label
-      ><br /><br />
+      <div class="inline-container">
+        <label for="surname" style="font-size: 2.7em">Last Name</label
+        ><button
+          class="learn-more-btn"
+          id="last"
+          onclick="toggleExpandedContent('expandedContent1')"
+        >
+          Learn More</button
+        ><img
+          src="read_description_icon.png"
+          alt="Read Description"
+          class="read-description-btn"
+          onclick="readDescription()"
+        />
+      </div>
+
+      <div class="expanded-content" id="expandedContent1">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      <br /><br />
       <input
         type="text"
         id="surname"
         name="surname"
         size="20"
+        class="inputbox"
         required
-        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
+      <div class="inline-container">
+        <label for="middleName" style="font-size: 2.7em">Middle name(s) </label
+        ><button
+          class="learn-more-btn"
+          id="middle"
+          onclick="toggleExpandedContent('expandedContent2')"
+        >
+          Learn More
+        </button>
+        <img
+          src="read_description_icon.png"
+          alt="Read Description"
+          class="read-description-btn"
+          onclick="readDescription()"
+        />
+      </div>
+      <div class="expanded-content" id="expandedContent2">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      <br /><br />
 
-      <label for="middleName" style="font-size: 2.7em"
-        >Middle name(s)<br /> </label
-      ><br />
       <input
         type="text"
+        class="inputbox"
         id="middleName"
         name="middleName"
         size="20"
-        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
       /><br /><br />
+      <div class="inline-container">
 
-      <label for="firstName" style="font-size: 2.7em"> First Name <br /></label
-      ><br />
+      <label for="firstName" style="font-size: 2.7em"> First Name </label>
+      <button
+        class="learn-more-btn"
+        id="first"
+        onclick="toggleExpandedContent('expandedContent3')"
+      >
+        Learn More
+      </button>
+      <img
+        src="read_description_icon.png"
+        alt="Read Description"
+        class="read-description-btn"
+        onclick="readDescription()"
+      /></div>
+      <div class="expanded-content" id="expandedContent3">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      <br /><br />
       <input
         type="text"
         id="firstName"
         name="firstName"
         size="20"
         required
-        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
+        class="inputbox"
       /><br /><br />
+      <div class="inline-container">
 
-      <label for="dob" style="font-size: 2.7em">Date of birth <br /></label
-      ><br />
+      <label for="dob" style="font-size: 2.7em">Date of birth </label>
+      <button
+        class="learn-more-btn"
+        id="dob"
+        onclick="toggleExpandedContent('expandedContent4')"
+      >
+        Learn More
+      </button>
+      <img
+        src="read_description_icon.png"
+        alt="Read Description"
+        class="read-description-btn"
+        onclick="readDescription()"
+      /></div>
+      <div class="expanded-content" id="expandedContent4">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      <br /><br />
+      
       <input
         type="date"
         id="dob"
         name="dob"
         required
-        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
+        class="inputbox"
       /><br /><br />
+      <div class="inline-container">
 
-      <label for="dod" style="font-size: 2.7em">Date of death<br /> </label
-      ><br />
+      <label for="dod" style="font-size: 2.7em">Date of death </label>
+      <button
+        class="learn-more-btn"
+        id="dod"
+        onclick="toggleExpandedContent('expandedContent5')"
+      >
+        Learn More
+      </button>
+      <img
+        src="read_description_icon.png"
+        alt="Read Description"
+        class="read-description-btn"
+        onclick="readDescription()"
+      />
+      </div>
+      <div class="expanded-content" id="expandedContent5">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      <br /><br />
       <input
         type="date"
         id="dod"
         name="dod"
         required
-        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
+        class="inputbox"
       /><br /><br />
+      <div class="inline-container">
 
-      <label for="place" style="font-size: 2.7em">Place of Death:</label><br />
+      <label for="place" style="font-size: 2.7em">Place of Death:</label>
+      <button
+        class="learn-more-btn"
+        id="middle"
+        onclick="toggleExpandedContent('expandedContent6')"
+      >
+        Learn More
+      </button>
+      <img
+        src="read_description_icon.png"
+        alt="Read Description"
+        class="read-description-btn"
+        onclick="readDescription()"
+      />
+      </div>
+      <div class="expanded-content" id="expandedContent6">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      <br /><br />
       <input
         type="text"
         id="place"
         name="place"
         size="40"
         required
-        style="font-size: 2em; border-width: 0.5em; padding: 0.5em"
+        class="inputbox"
       /><br /><br />
       <button class="submit">Submit Form</button>
     </form>
@@ -151,15 +277,7 @@
 
   <footer>
     <!--Added green color to get an idea of the height and width of footer-->
-    <div
-      style="
-        background-color: green;
-        padding: 10px;
-        text-align: left;
-        height: 100px;
-        font-size: 2.5em;
-      "
-    >
+    <div class="footer">
       <p>&copy; Natural Burrial (FOOTER)</p>
     </div>
   </footer>
