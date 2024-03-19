@@ -78,24 +78,24 @@ box:hover {
 #last {
   margin-left: 8.2em;
 }
-#middle{
+#middle {
   margin-left: 1.75em;
 }
-#first{
+#first {
   margin-left: 8em;
 }
-#dobB{
+#dobB {
   margin-left: 6em;
 }
-#dodB{
-margin-left: 5em;
+#dodB {
+  margin-left: 5em;
 }
-#podB{
+#podB {
   margin-left: 2.3em;
 }
-.theme-toggle{
-margin-left: 70em;
-
+.theme-toggle {
+  margin-left: 5em;
+  padding: 1em;
 }
 .dark-mode {
   background-color: black;
