@@ -1,13 +1,22 @@
 body {
-  /* background-color: white; */
   background-color: rgb(251, 252, 252);
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.header {
+  background-color: rgb(243, 243, 243);
+  padding: 0.8em;
+  text-align: left;
+  height: 9.5rem;
+}
+
+.header img {
+  height: 9.5em;
+  width: 9.5em;
 }
 
 .text {
   color: black;
-  font-size: 2.7em;
+  font-size: 1.5em; /* adjusted font size */
   font-family: sans-serif;
 }
 
@@ -19,6 +28,27 @@ body {
 }
 
 ul.text li {
-  /* display: inline-block; */
   margin-right: 50px;
 }
+
+/* Button container */
+.button-container {
+  position: fixed;
+  bottom: 20px; /* Move the buttons upwards */
+  right: 20px;
+}
+
+.button-container button {
+  font-size: 1em;
+  padding: 10px 20px;
+}
+
+.footer {
+  background-color: green;
+  padding: 10px;
+  text-align: left;
+  height: 100px;
+  font-size: 2.5em;
+}
+
+
