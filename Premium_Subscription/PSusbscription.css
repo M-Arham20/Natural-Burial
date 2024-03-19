@@ -22,3 +22,32 @@ ul.text li {
   /* display: inline-block; */
   margin-right: 50px;
 }
+.inline-container {
+  display: flex;
+  align-items: center;
+}
+.read-description-btn {
+  /* cursor: pointer; */
+  max-width: 0.9em;
+  height: auto;
+}
+#premium{
+  margin-left: 5em;
+}
+.learn-more-btn {
+  /* background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; */
+  margin-right: 10px;
+}
+#gps{
+  margin-left:10em;
+}
+#casket{
+  margin-left: 10em;
+}

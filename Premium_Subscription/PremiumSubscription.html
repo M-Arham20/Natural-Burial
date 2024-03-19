@@ -16,6 +16,7 @@
       margin-right: 5px; /* Add some space between radio button and label */
     }
   </style>
+  <script src="PSubscription.js"></script>
 </head>
 <body>
   <div style="
@@ -34,7 +35,31 @@
   <p class="text">Services offered under premium subscription:</p>
   <ul class="text">
     <li>
-      Premium Tombstone.
+      <div class="inline-container">
+
+      <p>Premium Tombstone</p>
+      <button
+          class="learn-more-btn"
+          id="premium"
+          onclick="toggleExpandedContent('expandedContent1')"
+        >
+          Learn More</button
+        ><img
+          src="read_description_icon.png"
+          alt="Read Description"
+          class="read-description-btn"
+          onclick="readDescription()"
+        />
+      </div>
+
+      <div class="expanded-content" id="expandedContent1">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      </div>
       <div class="image-container">
         <img
           class="images"
@@ -44,8 +69,32 @@
       </div>
     </li>
     <li>
-      G.P.S accessible
-      <div class="image-container">
+      <div class="inline-container">
+
+        <p>G.P.S Accesibility</p>
+        <button
+            class="learn-more-btn"
+            id="gps"
+            onclick="toggleExpandedContent('expandedContent2')"
+          >
+            Learn More</button
+          ><img
+            src="read_description_icon.png"
+            alt="Read Description"
+            class="read-description-btn"
+            onclick="readDescription()"
+          />
+        </div>
+  
+        <div class="expanded-content" id="expandedContent2">
+          <p>
+            This is the additional information you'll see when you click on the
+            "Learn More" button. It can include detailed descriptions, helpful
+            tips, and additional resources.
+          </p>
+        </div>
+        </div>
+       <div class="image-container">
         <img
           class="images"
           src="/Premium_Subscription/GPS.jpeg"
