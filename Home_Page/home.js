@@ -11,3 +11,7 @@ function readDescription() {
   var descriptionText = document.getElementById("expandedContent").innerText;
   alert(descriptionText);
 }
+function darkMode() {
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+}

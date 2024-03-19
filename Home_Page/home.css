@@ -1,5 +1,5 @@
 body {
-  background-color: antiquewhite;
+  background-color: rgb(248, 248, 248);
 }
 .Header {
   background-color: rgb(88, 225, 88);
@@ -12,7 +12,7 @@ body {
   padding-left: 13em;
   font-size: 1em;
 }
-.learn-more-btn{
+.learn-more-btn {
   /* background-color: #007bff;
   color: #fff;
   border: none;
@@ -23,10 +23,10 @@ body {
   transition: background-color 0.3s ease; */
   margin-right: 10px;
 }
- .read-description-btn {
+.read-description-btn {
   /* cursor: pointer; */
-  max-width: 2em; 
-  height: auto; 
+  max-width: 2em;
+  height: auto;
 }
 /* Style for the expanded content */
 .expanded-content {
@@ -38,10 +38,9 @@ body {
 }
 .inline-container {
   display: flex;
-  align-items: center; 
-
+  align-items: center;
 }
-#middle{
+#middle {
   margin-left: 1em;
 }
 
@@ -75,4 +74,30 @@ box:hover {
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 1em;
+}
+#last {
+  margin-left: 8.2em;
+}
+#middle{
+  margin-left: 1.75em;
+}
+#first{
+  margin-left: 8em;
+}
+#dobB{
+  margin-left: 6em;
+}
+#dodB{
+margin-left: 5em;
+}
+#podB{
+  margin-left: 2.3em;
+}
+.theme-toggle{
+margin-left: 70em;
+
+}
+.dark-mode {
+  background-color: black;
+  color: white;
 }
