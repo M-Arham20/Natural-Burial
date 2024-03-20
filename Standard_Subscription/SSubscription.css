@@ -3,7 +3,7 @@ body {
 }
 
 .header {
-  background-color: rgb(249, 252, 249);
+  background-color: rgb(88, 225, 88);
   padding: 0.8em;
   text-align: left;
   height: 9.5rem;
@@ -50,4 +50,3 @@ ul.text li {
   height: 100px;
   font-size: 2.5em;
 }
-

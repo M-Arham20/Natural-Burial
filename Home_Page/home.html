@@ -41,38 +41,30 @@
   <body>
     <!--Added green color to get an idea of the height and width of header-->
     <div class="Header">
-      <img
-        src="/Home_Page/Logo.jpg"
-        alt="logo"
-        style="height: 9.5em; width: 9.5em"
-      />
+      <img src="/Home_Page/Logo.jpg" alt="logo" class="header_image" />
     </div>
-
+    <button class="theme-toggle" onclick="darkMode()">Toggle Theme</button>
     <div class="heading">
-      <h1>
-        Choose your plan<button class="theme-toggle" onclick="darkMode()">
-          Toggle Theme
-        </button>
-      </h1>
+      <h1>Choose your plan</h1>
     </div>
     <div class="box">
       <a href="/Basic_Subscription/BasicSubscription.html">
         <h2>Basic</h2>
-        <p>This box leads to Basic Subscription</p>
+        <p>Click here to view the Basic Subscription Plan</p>
       </a>
     </div>
 
     <div class="box">
       <a href="/Standard_Subscription/StandardSubscription.html">
         <h2>Standard</h2>
-        <p>This box leads to Standard Subscription</p>
+        <p>Click here to view the Standard Subscription Plan</p>
       </a>
     </div>
 
     <div class="box">
       <a href="/Premium_Subscription/PremiumSubscription.html">
         <h2>Premium</h2>
-        <p>This box leads to Premium Subscription</p>
+        <p>Click here to view the Premium Subscription Plan</p>
       </a>
     </div>
     <div style="padding: 0.1em">
@@ -83,7 +75,7 @@
 
     <form action="/submit_answers" method="POST">
       <div class="inline-container">
-        <label for="surname" style="font-size: 2.7em">Last Name</label
+        <label for="surname" class="p-info">Last Name: </label
         ><button
           class="learn-more-btn"
           id="last"
@@ -115,7 +107,7 @@
         required
       /><br /><br />
       <div class="inline-container">
-        <label for="middleName" style="font-size: 2.7em">Middle name(s) </label
+        <label for="middleName" class="p-info">Middle name(s): </label
         ><button
           class="learn-more-btn"
           id="middle"
@@ -147,7 +139,7 @@
         size="20"
       /><br /><br />
       <div class="inline-container">
-        <label for="firstName" style="font-size: 2.7em"> First Name </label>
+        <label for="firstName" class="p-info"> First Name: </label>
         <button
           class="learn-more-btn"
           id="first"
@@ -179,7 +171,7 @@
         class="inputbox"
       /><br /><br />
       <div class="inline-container">
-        <label for="dob" style="font-size: 2.7em">Date of birth </label>
+        <label for="dob" class="p-info">Date of birth: </label>
         <button
           class="learn-more-btn"
           id="dobB"
@@ -211,7 +203,7 @@
         class="inputbox"
       /><br /><br />
       <div class="inline-container">
-        <label for="dod" style="font-size: 2.7em">Date of death </label>
+        <label for="dod" class="p-info">Date of death: </label>
         <button
           class="learn-more-btn"
           id="dodB"
@@ -273,7 +265,7 @@
         required
         class="inputbox"
       /><br /><br />
-      
+
       <button class="submit">Submit Form</button>
     </form>
   </body>

@@ -2,11 +2,19 @@ body {
   background-color: rgb(248, 248, 248);
 }
 .Header {
+  display: flex;
   background-color: rgb(88, 225, 88);
-  padding: 0.8em;
-  text-align: left;
-  height: 9.5rem;
+  height: 11em;
 }
+
+.header_image {
+  align-items: start;
+  margin-top: 0.8em;
+  margin-left: 0.8em;
+  height: 9.5em;
+  width: 9.5em;
+}
+
 .heading {
   padding: 0.1em;
   padding-left: 13em;
@@ -60,12 +68,14 @@ body {
   margin-top: 0.5em;
   border: solid;
   font-size: 2em;
-  width: 20em;
+  width: 21em;
   text-align: center;
   cursor: pointer;
   margin-bottom: 1em;
 }
-box:hover {
+.box:hover {
+  background-color: lightblue;
+  font-size: 2.2em;
 }
 .submit {
   border: solid;
@@ -94,10 +104,14 @@ box:hover {
   margin-left: 2.3em;
 }
 .theme-toggle {
-  margin-left: 5em;
-  padding: 1em;
+  margin-top: 2em;
+  font-size: 1em;
 }
 .dark-mode {
   background-color: black;
   color: white;
+}
+
+.p-info {
+  font-size: 2.7em;
 }
