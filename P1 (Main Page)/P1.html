@@ -22,7 +22,7 @@
     <!-- Major sections -->
     <!-- Header -->
     <div class="Header">
-      <img src="/P1 (Main Page)/Logo.jpg" alt="logo" class="header_image" />
+      <img src="/Home_Page/Logo.jpg" alt="logo" class="header_image" />
     </div>
     <!-- Theme Toggle Button -->
     <button class="theme-toggle" onclick="darkMode()">Toggle Theme</button>
@@ -33,19 +33,19 @@
     <!-- Subscription boxes -->
     <div class="box">
       <a href="/Basic_Subscription/BasicSubscription.html">
-        <h2>Basic</h2>
+        <h2>Basic: $2500</h2>
         <p>Click here to view the Basic Subscription Plan</p>
       </a>
     </div>
     <div class="box">
       <a href="/Standard_Subscription/StandardSubscription.html">
-        <h2>Standard</h2>
+        <h2>Standard:$5000</h2>
         <p>Click here to view the Standard Subscription Plan</p>
       </a>
     </div>
     <div class="box">
       <a href="/Premium_Subscription/PremiumSubscription.html">
-        <h2>Premium</h2>
+        <h2>Premium:$10000</h2>
         <p>Click here to view the Premium Subscription Plan</p>
       </a>
     </div>
@@ -211,6 +211,13 @@
         </p>
       </div>
       <br /><br />
+      <input
+        type="date"
+        id="dob"
+        name="dob"
+        required
+        class="inputbox"
+      /><br /><br />
       <!-- Place of Death -->
       <div class="inline-container">
         <label for="place" style="font-size: 2.7em">Place of Death:</label>
@@ -244,6 +251,41 @@
         required
         class="inputbox"
       /><br /><br />
+      <!-- Date of Birth -->
+      <div class="inline-container">
+        <label for="phone" class="p-info">Phone Number: </label>
+        <button
+          class="learn-more-btn"
+          id="phoneB"
+          onclick="toggleExpandedContent('expandedContent7')"
+        >
+          Learn More
+        </button>
+        <img
+          src="read_description_icon.png"
+          alt="Read Description"
+          class="read-description-btn"
+          onclick="readDescription()"
+        />
+      </div>
+      <div class="expanded-content" id="expandedContent7">
+        <p>
+          This is the additional information you'll see when you click on the
+          "Learn More" button. It can include detailed descriptions, helpful
+          tips, and additional resources.
+        </p>
+      </div>
+      <br /><br />
+      <input
+        type="tel"
+        class="inputbox"
+        name="phone"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        placeholder="123-456-7890"
+        required
+      />
+
+      <br /><br />
       <!-- Submit Button -->
       <button class="submit">Submit Form</button>
     </form>
