@@ -1,19 +1,19 @@
 <!--
-    Authors: 
-   Group Leader: Muhammad Arham Mussawar  A00478275
-   Muhammad Asfand Yar Khan  A00465145
-   Muttyeb Tahir  A00471177
-   Subhan Nadeem  A00469690 -->
+Authors: 
+Group Leader: Muhammad Arham Mussawar  A00478275
+Muhammad Asfand Yar Khan  A00465145
+Muttyeb Tahir  A00471177
+Subhan Nadeem  A00469690 -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natural Burial</title>
-    <!-- FILE HEADER -->
+    <title>Natural Burial Plans</title>
+
     <!-- Purpose: Styles for home page -->
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="/P1 (Main Page)/home.css" />
     <!-- FILE HEADER -->
     <!-- Purpose: JavaScript for home page -->
     <script src="home.js"></script>
@@ -30,27 +30,31 @@
     <div class="heading">
       <h1>Choose your plan</h1>
     </div>
-    <!-- Subscription boxes -->
-    <div class="box">
-      <a href="/Basic_Subscription/BasicSubscription.html">
-        <h2>Basic: $2,500</h2>
-        <p>Click here to view the Basic Subscription Plan</p>
-      </a>
-    </div>
-    <div class="box">
-      <a href="/Standard_Subscription/StandardSubscription.html">
-        <h2>Standard:$5,000</h2>
-        <p>Click here to view the Standard Subscription Plan</p>
-      </a>
-    </div>
 
-    <div class="box">
-      <a href="/Premium_Subscription/PremiumSubscription.html">
-        <h2>Premium:$10,000</h2>
-        <p>Click here to view the Premium Subscription Plan</p>
-      </a>
-    </div>
-    <!-- Personal info section -->
+    <style>
+      /* Add your CSS styles here */
+      .subscription-plan {
+        margin: 50px auto;
+        padding: 20px;
+        width: 80%;
+        background-color: #f0f0f0;
+      }
+    </style>
+
+    <!-- Navigation buttons for subscription plans -->
+    <button onclick="scrollToSubscription('plan1')">
+      <h2>Basic Subscription: $2,500</h2>
+      <p>Click here to view the subscription plan</p>
+    </button>
+    <button onclick="scrollToSubscription('plan2')">
+      <h2>Standard Subscription: $5,000</h2>
+      <p>Click here to view the subscription plan</p>
+    </button>
+    <button onclick="scrollToSubscription('plan3')">
+      <h2>Premium Subscription: $10,000</h2>
+      <p>Click here to view the subscription plan</p>
+    </button>
+
     <div style="padding: 0.1em">
       <h1 style="font-size: 2.5em">
         Personal Info of deceased: according to the act of birth
@@ -68,7 +72,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -101,7 +105,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -133,7 +137,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -166,7 +170,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -198,7 +202,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -230,7 +234,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -263,7 +267,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -291,49 +295,58 @@
       <button class="submit">Submit Form</button>
     </form>
 
-    <!-- CODE FOR BASIC SUBSCRIPTION -->
-    <p class="text">Services offered under Basic subscription:</p>
-    <ul class="text">
-      <!-- Basic Plot section -->
-      <li>
-        Basic Plot.
-        <div class="image-container">
-          <img
-            class="images"
-            src="/Basic_Subscription/Pictures/BPlot.jpg"
-            alt="Basic Plot Image"
-            width="700em"
-          />
-        </div>
-      </li>
-      <!-- Basic Shroud section -->
-      <li>
-        Basic Shroud
-        <div class="image-container">
-          <img
-            class="images"
-            src="/Basic_Subscription/Pictures/BShroud.jpeg"
-            alt="Basic Shroud"
-            width="700em"
-          />
-        </div>
-      </li>
-      <!-- Basic Stones section -->
-      <li>
-        Basic Stones
-        <div class="image-container">
-          <img
-            class="images"
-            src="/Basic_Subscription/Pictures/BStones.jpeg"
-            alt="BasicStones"
-            width="700em"
-          />
-        </div>
-      </li>
-    </ul>
+    <!-- Subscription Plan 1 -->
+    <div id="plan1" class="subscription-plan">
+      <h2>Basic Subscription</h2>
+      <!-- Placeholder tags -->
+      <p class="text">Services offered under Basic subscription:</p>
+      <ul class="text">
+        <!-- Basic Plot section -->
+        <li>
+          Basic Plot.
+          <div class="image-container">
+            <img
+              class="images"
+              src="/Pictures/BPlot.jpg"
+              alt="Basic Plot Image"
+              width="800em"
+              height="500em"
+            />
+          </div>
+        </li>
+        <!-- Basic Shroud section -->
+        <li>
+          Basic Shroud
+          <div class="image-container">
+            <img
+              class="images"
+              src="/Pictures/BShroud.jpeg"
+              alt="Basic Shroud"
+              width="800em"
+              height="500em"
+            />
+          </div>
+        </li>
+        <!-- Basic Stones section -->
+        <li>
+          Basic Stones
+          <div class="image-container">
+            <img
+              class="images"
+              src="/Pictures/BStones.jpeg"
+              alt="BasicStones"
+              width="800em"
+              height="500em"
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
 
-    <!-- CODE FOR STANDARD SUBSCRIPTION -->
-    <div class="text">
+    <!-- Subscription Plan 2 -->
+    <div id="plan2" class="subscription-plan">
+      <h2>Standard Subscription</h2>
+      <!-- Placeholder tags -->
       <p class="text">Services offered under Standard subscription:</p>
       <ul class="text">
         <!-- Standard Plot section -->
@@ -342,9 +355,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Standard_Subscription/SPlot.jpg"
+              src="/Pictures/SPlot.jpg"
               alt="Standard Plot Image"
-              width="700em"
+              width="800em"
+              height="500em"
             />
           </div>
         </li>
@@ -354,9 +368,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Standard_Subscription/SCasket.jpg"
+              src="/Pictures/SCasket.jpg"
               alt="StandardCasket"
-              width="700em"
+              width="800em"
+              height="500em"
             />
           </div>
         </li>
@@ -366,9 +381,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Standard_Subscription/STombstone.jpg"
+              src="/Pictures/STombstone.jpg"
               alt="PremiumTombstone"
-              width="700em"
+              width="800em"
+              height="500em"
             />
           </div>
         </li>
@@ -378,9 +394,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Standard_Subscription/Decorations.jpg"
+              src="/Pictures/Decorations.jpg"
               alt="Decorations"
-              width="700em"
+              width="800em"
+              height="500em"
             />
             <!-- Image for decoration -->
             <div class="radio-options">
@@ -413,14 +430,20 @@
                 id="decorationOption4"
                 name="decoration"
                 value="Option 4"
+                width="800em"
+                height="500em"
               />
               <label for="decorationOption4">Wildflower Seeds</label><br />
             </div>
           </div>
         </li>
       </ul>
+    </div>
 
-      <!-- CODE FOR PREMIUM SUBSCRIPTION -->
+    <!-- Subscription Plan 3 -->
+    <div id="plan3" class="subscription-plan">
+      <h2>Premium Subscription</h2>
+      <!-- Placeholder tags -->
       <p class="text">Services offered under premium subscription:</p>
       <ul class="text">
         <!-- Tombstone section -->
@@ -429,9 +452,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Premium_Subscription/PTombstone1.jpg"
+              src="/Pictures/PTombstone1.jpg"
               alt="Tombstone Image"
-              width="700em"
+              width="800em"
+              height="500em"
             />
           </div>
         </li>
@@ -441,9 +465,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Premium_Subscription/GPS.jpeg"
+              src="/Pictures/GPS.jpeg"
               alt="GPSScreenShot"
-              width="700em"
+              width="800em"
+              height="500em"
             />
           </div>
         </li>
@@ -453,9 +478,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Premium_Subscription/PCasket.jpg"
+              src="/Pictures/PCasket.jpg"
               alt="CasketImage"
-              width="700em"
+              width="800em"
+              height="500em"
             />
             <!-- Image for casket -->
             <div class="radio-options">
@@ -499,9 +525,10 @@
           <div class="image-container">
             <img
               class="images"
-              src="/Premium_Subscription/Decorations.jpg"
+              src="/Pictures/Decorations.jpg"
               alt="DecorationImage"
-              width="700em"
+              width="800em"
+              height="500em"
             />
             <!-- Image for decoration -->
             <div class="radio-options">
@@ -541,7 +568,15 @@
         </li>
       </ul>
     </div>
+
+    <script>
+      function scrollToSubscription(planId) {
+        var element = document.getElementById(planId);
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    </script>
   </body>
+
   <footer>
     <!-- Footer -->
     <!--Added green color to get an idea of the height and width of footer-->
