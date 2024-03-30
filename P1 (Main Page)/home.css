@@ -125,6 +125,7 @@ body {
   background-color: #f0f0f0;
 }
 
-.custom-width {
-  width: 35em; /* You can adjust this width as needed */
+.w-custom {
+  width: 35em;
 }
+
