@@ -21,22 +21,22 @@ body {
   font-size: 1em;
 }
 .learn-more-btn {
-  /* background-color: #007bff;
+  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease; */
+  transition: background-color 0.3s ease;
   margin-right: 10px;
 }
 .read-description-btn {
-  /* cursor: pointer; */
+  cursor: pointer;
   max-width: 2em;
   height: auto;
 }
-/* Style for the expanded content */
+ 
 .expanded-content {
   display: none;
   background-color: #f9f9f9;
@@ -54,7 +54,7 @@ body {
 
 .inputbox {
   font-size: 2em;
-  /*border-width: 0.5em;*/
+  border-width: 0.5em;
   padding: 0.5em;
 }
 .footer {
@@ -73,10 +73,7 @@ body {
   cursor: pointer;
   margin-bottom: 1em;
 }
-.box:hover {
-  background-color: lightblue;
-  font-size: 2.2em;
-}
+
 .submit {
   border: solid;
   padding: 1em;
@@ -122,4 +119,12 @@ body {
 }
 #phoneB {
   margin-left: 3.5em;
+}
+.subscription-plan {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.custom-width {
+  width: 35em; /* You can adjust this width as needed */
 }

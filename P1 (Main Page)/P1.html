@@ -17,43 +17,60 @@ Subhan Nadeem  A00469690 -->
     <!-- FILE HEADER -->
     <!-- Purpose: JavaScript for home page -->
     <script src="home.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="t.js"></script>
+
   </head>
   <body>
     <!-- Major sections -->
     <!-- Header -->
-    <div class="Header">
-      <img src="/P1 (Main Page)/Logo.jpg" alt="logo" class="header_image" />
+    <div class="flex bg-green-500 text-white h-48 items-center">
+    <img src="/P1 (Main Page)/Logo.jpg" alt="logo" class="mt-2 ml-8 h-36 w-36" />
+    <div class="ml-44 text-center">
+        <p class="text-8xl font-semibold">Natural Burial</p>
+        <hr class="my-2 border-t-2 border-white">
+        <p class="text-5xl text-white font-semibold">"Your final footprint on the Earth."</p>
     </div>
+</div>
+
+  
+  
+  
+
     <!-- Theme Toggle Button -->
-    <button class="theme-toggle" onclick="darkMode()">Toggle Theme</button>
+<button class="theme-toggle bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300 ease-in-out" onclick="darkMode()">Toggle Theme</button>
     <!-- Heading -->
-    <div class="heading">
+    <div class="font-bold text-5xl my-4">
       <h1>Choose your plan</h1>
     </div>
 
-    <style>
-      /* Add your CSS styles here */
-      .subscription-plan {
-        margin: 50px auto;
-        padding: 20px;
-        width: 80%;
-        background-color: #f0f0f0;
-      }
-    </style>
+    
 
-    <!-- Navigation buttons for subscription plans -->
-    <button onclick="scrollToSubscription('plan1')">
-      <h2>Basic Subscription: $2,500</h2>
-      <p>Click here to view the subscription plan</p>
-    </button>
-    <button onclick="scrollToSubscription('plan2')">
-      <h2>Standard Subscription: $5,000</h2>
-      <p>Click here to view the subscription plan</p>
-    </button>
-    <button onclick="scrollToSubscription('plan3')">
-      <h2>Premium Subscription: $10,000</h2>
-      <p>Click here to view the subscription plan</p>
-    </button>
+   <!-- Navigation buttons for subscription plans -->
+<div class="space-y-4">
+  <button onclick="scrollToSubscription('plan1')" class="custom-width bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg">
+    <h2 class="text-3xl">Basic Subscription: $2,500</h2>
+    <p>Click here to view the subscription plan</p>
+  </button>
+
+  <br><br>
+
+  <button onclick="scrollToSubscription('plan2')" class="custom-width bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg">
+    <h2 class="text-3xl">Standard Subscription: $5,000</h2>
+    <p>Click here to view the subscription plan</p>
+  </button>
+
+  <br><br>
+
+  <button onclick="scrollToSubscription('plan3')" class="custom-width bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg">
+    <h2 class="text-3xl">Premium Subscription: $10,000</h2>
+    <p>Click here to view the subscription plan</p>
+  </button>
+</div>
+
+    
+    
+
 
     <div style="padding: 0.1em">
       <h1 style="font-size: 2.5em">
@@ -295,53 +312,52 @@ Subhan Nadeem  A00469690 -->
       <button class="submit">Submit Form</button>
     </form>
 
-    <!-- Subscription Plan 1 -->
-    <div id="plan1" class="subscription-plan">
-      <h2>Basic Subscription</h2>
-      <!-- Placeholder tags -->
-      <p class="text">Services offered under Basic subscription:</p>
-      <ul class="text">
-        <!-- Basic Plot section -->
-        <li>
-          Basic Plot.
-          <div class="image-container">
-            <img
-              class="images"
-              src="/Pictures/BPlot.jpg"
-              alt="Basic Plot Image"
-              width="800em"
-              height="500em"
-            />
-          </div>
-        </li>
-        <!-- Basic Shroud section -->
-        <li>
-          Basic Shroud
-          <div class="image-container">
-            <img
-              class="images"
-              src="/Pictures/BShroud.jpeg"
-              alt="Basic Shroud"
-              width="800em"
-              height="500em"
-            />
-          </div>
-        </li>
-        <!-- Basic Stones section -->
-        <li>
-          Basic Stones
-          <div class="image-container">
-            <img
-              class="images"
-              src="/Pictures/BStones.jpeg"
-              alt="BasicStones"
-              width="800em"
-              height="500em"
-            />
-          </div>
-        </li>
-      </ul>
-    </div>
+      <!-- Subscription Plan 1 -->
+        <div id="plan1" class="subscription-plan">
+          <h2>Basic Subscription</h2>
+          <!-- Placeholder tags -->
+          <p class="text">Services offered under Basic subscription:</p>
+          <ul class="text">
+            <!-- Basic Plot section -->
+            <li>
+              Basic Plot.
+              <div class="image-container">
+                <img
+                  class="block h-64 border-solid border-8 rounded-full border-red-900"
+                  src="/Pictures/BPlot.jpg"
+                  alt="Basic Plot Image"
+                  
+                />
+              </div>
+            </li>
+            
+            <!-- Payment Information Section -->
+          <!-- Basic Shroud section -->
+          <li>
+            Basic Shroud
+            <div class="image-container">
+              <img
+                class="block h-64 border-solid border-8 rounded-full border-red-900"
+                src="/Pictures/BShroud.jpeg"
+                alt="Basic Shroud"
+                
+              />
+            </div>
+          </li>
+          <!-- Basic Stones section -->
+          <li>
+            Basic Stones
+            <div class="image-container">
+              <img
+                class="block h-64 border-solid border-8 rounded-full border-red-900"
+                src="/Pictures/BStones.jpeg"
+                alt="BasicStones"
+                
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
 
     <!-- Subscription Plan 2 -->
     <div id="plan2" class="subscription-plan">
@@ -354,11 +370,10 @@ Subhan Nadeem  A00469690 -->
           Standard Plot.
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/SPlot.jpg"
               alt="Standard Plot Image"
-              width="800em"
-              height="500em"
+              
             />
           </div>
         </li>
@@ -367,11 +382,10 @@ Subhan Nadeem  A00469690 -->
           Standard Casket
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/SCasket.jpg"
               alt="StandardCasket"
-              width="800em"
-              height="500em"
+             
             />
           </div>
         </li>
@@ -380,11 +394,10 @@ Subhan Nadeem  A00469690 -->
           Premium Tombstone
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/STombstone.jpg"
               alt="PremiumTombstone"
-              width="800em"
-              height="500em"
+              
             />
           </div>
         </li>
@@ -393,11 +406,10 @@ Subhan Nadeem  A00469690 -->
           Decorations for tombstone
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/Decorations.jpg"
               alt="Decorations"
-              width="800em"
-              height="500em"
+              
             />
             <!-- Image for decoration -->
             <div class="radio-options">
@@ -451,11 +463,10 @@ Subhan Nadeem  A00469690 -->
           Premium Tombstone.
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/PTombstone1.jpg"
               alt="Tombstone Image"
-              width="800em"
-              height="500em"
+              
             />
           </div>
         </li>
@@ -464,11 +475,10 @@ Subhan Nadeem  A00469690 -->
           G.P.S accessible
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/GPS.jpeg"
               alt="GPSScreenShot"
-              width="800em"
-              height="500em"
+              
             />
           </div>
         </li>
@@ -477,11 +487,10 @@ Subhan Nadeem  A00469690 -->
           Different options for caskets:
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/PCasket.jpg"
               alt="CasketImage"
-              width="800em"
-              height="500em"
+              
             />
             <!-- Image for casket -->
             <div class="radio-options">
@@ -524,11 +533,10 @@ Subhan Nadeem  A00469690 -->
           Custom Decorations for tombstone:
           <div class="image-container">
             <img
-              class="images"
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
               src="/Pictures/Decorations.jpg"
               alt="DecorationImage"
-              width="800em"
-              height="500em"
+              
             />
             <!-- Image for decoration -->
             <div class="radio-options">
@@ -566,9 +574,9 @@ Subhan Nadeem  A00469690 -->
             </div>
           </div>
         </li>
-      </ul>
     </div>
-
+li>
+      </u
     <script>
       function scrollToSubscription(planId) {
         var element = document.getElementById(planId);
