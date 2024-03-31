@@ -16,8 +16,56 @@ Subhan Nadeem  A00469690 -->
     <link rel="stylesheet" href="/P1 (Main Page)/home.css" />
     <!-- FILE HEADER -->
     <!-- Purpose: JavaScript for home page -->
-    <script src="home.js"></script>
+    <script src="home.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let timeout;
+
+        // Function to speak the text using Web Speech API
+        function speak(text) {
+          const synth = window.speechSynthesis;
+          const utterance = new SpeechSynthesisUtterance(text);
+
+          // Find a female voice if available
+          const femaleVoice = synth
+            .getVoices()
+            .find((voice) => voice.name.includes("Susan"));
+
+          // If a female voice is found, use it; otherwise, use the default voice
+          utterance.voice = femaleVoice;
+
+          utterance.pitch = 2; // Adjust pitch (0 to 2)
+          utterance.rate = 1; // Adjust rate (0.1 to 10)
+
+          synth.speak(utterance);
+        }
+
+        // Function to handle mouseover events and trigger speech after 2 seconds
+        function handleMouseoverEvent(elementSelector) {
+          const elements = document.querySelectorAll(elementSelector);
+
+          elements.forEach((element) => {
+            element.addEventListener("mouseover", function () {
+              timeout = setTimeout(() => {
+                speak(this.textContent);
+              }, 5000);
+            });
+
+            element.addEventListener("mouseout", function () {
+              clearTimeout(timeout);
+            });
+          });
+        }
+
+        // Call the function to handle mouseover events for specific elements
+        handleMouseoverEvent("h1, label, p, .box, footer p,li,radio");
+      });
+      window.speechSynthesis.onvoiceschanged = function () {
+        var voices = window.speechSynthesis.getVoices();
+        console.log(voices);
+      };
+    </script>
   </head>
   <body onload="retrieving()">
     <!-- Major sections -->
@@ -81,7 +129,7 @@ Subhan Nadeem  A00469690 -->
         Personal Info of deceased: according to the act of birth
       </h1>
     </div>
-    <form action="/submit_answers" method="POST">
+    <form>
       <!-- Last Name -->
       <div class="inline-container">
         <label for="surname" class="p-info">Last Name: </label>
