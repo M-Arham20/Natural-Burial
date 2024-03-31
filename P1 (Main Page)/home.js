@@ -74,3 +74,20 @@ function retrieving() {
   document.getElementById("place").value = retrievedData.place;
   document.getElementById("phone").value = retrievedData.phone;
 }
+function autoHyphen(input) {
+  // Remove any existing hyphens and non-numeric characters
+  let phoneNumber = input.value.replace(/[^0-9]/g, '');
+
+  // Add hyphen after the first three digits if present
+  if (phoneNumber.length > 3) {
+      phoneNumber = phoneNumber.slice(0, 3) + '-' + phoneNumber.slice(3);
+  }
+
+  // Add hyphen after the next three digits if present
+  if (phoneNumber.length > 7) {
+      phoneNumber = phoneNumber.slice(0, 7) + '-' + phoneNumber.slice(7);
+  }
+
+  // Update the input value
+  input.value = phoneNumber;
+}
