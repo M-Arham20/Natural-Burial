@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Group Leader: Mohammad Arham Mussawar  A00478275-->
+  <!-- Muhammad Asfand Yar Khan  A00465145-->
+  <!-- Muttyeb Tahir  A00471177-->
+  <!-- Subhan Nadeem  A00469690-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natural Burial</title>
+  <!-- FILE HEADER -->
+  <!-- Purpose: Styles for home page -->
+  <link rel="stylesheet" href="home.css" />
+  <!-- FILE HEADER -->
+  <!-- Purpose: JavaScript for home page -->
+  <script src="home.js"></script>
+</head>
+<body>
+  <!-- Major sections -->
+  <!-- Header -->
+  <div class="Header">
+    <img src="/Home_Page/Logo.jpg" alt="logo" class="header_image" />
+  </div>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" onclick="darkMode()">Toggle Theme</button>
+  <!-- Heading -->
+  <div class="heading">
+    <h1>Choose your plan</h1>
+  </div>
+  <!-- Subscription boxes -->
+  <div class="box">
+    <a href="/Basic_Subscription/BasicSubscription.html">
+      <h2>Basic</h2>
+      <p>Click here to view the Basic Subscription Plan</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/Standard_Subscription/StandardSubscription.html">
+      <h2>Standard</h2>
+      <p>Click here to view the Standard Subscription Plan</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/Premium_Subscription/PremiumSubscription.html">
+      <h2>Premium</h2>
+      <p>Click here to view the Premium Subscription Plan</p>
+    </a>
+  </div>
+  <!-- Personal info section -->
+  <div style="padding: 0.1em">
+    <h1 style="font-size: 2.5em">
+      Personal Info of deceased: according to the act of birth
+    </h1>
+  </div>
+  <form action="/submit_answers" method="POST">
+    <!-- Last Name -->
+    <div class="inline-container">
+      <label for="surname" class="p-info">Last Name: </label>
+      <button class="learn-more-btn" id="last" onclick="toggleExpandedContent('expandedContent1')">Learn More</button>
+      <img src="read_description_icon.png" alt="Read Description" class="read-description-btn" onclick="readDescription()"/>
+    </div>
+    <div class="expanded-content" id="expandedContent1">
+      <p>This is the additional information you'll see when you click on the "Learn More" button. It can include detailed descriptions, helpful tips, and additional resources.</p>
+    </div>
+    <br /><br />
+    <input type="text" id="surname" name="surname" size="20" class="inputbox" required/><br /><br />
+    <!-- Middle Name(s) -->
+    <div class="inline-container">
+      <label for="middleName" class="p-info">Middle name(s): </label>
+      <button class="learn-more-btn" id="middle" onclick="toggleExpandedContent('expandedContent2')">Learn More</button>
+      <img src="read_description_icon.png" alt="Read Description" class="read-description-btn" onclick="readDescription()"/>
+    </div>
+    <div class="expanded-content" id="expandedContent2">
+      <p>This is the additional information you'll see when you click on the "Learn More" button. It can include detailed descriptions, helpful tips, and additional resources.</p>
+    </div>
+    <br /><br />
+    <input type="text" class="inputbox" id="middleName" name="middleName" size="20"/><br /><br />
+    <!-- First Name -->
+    <div class="inline-container">
+      <label for="firstName" class="p-info"> First Name: </label>
+      <button class="learn-more-btn" id="first" onclick="toggleExpandedContent('expandedContent3')">Learn More</button>
+      <img src="read_description_icon.png" alt="Read Description" class="read-description-btn" onclick="readDescription()"/>
+    </div>
+    <div class="expanded-content" id="expandedContent3">
+      <p>This is the additional information you'll see when you click on the "Learn More" button. It can include detailed descriptions, helpful tips, and additional resources.</p>
+    </div>
+    <br /><br />
+    <input type="text" id="firstName" name="firstName" size="20" required class="inputbox"/><br /><br />
+    <!-- Date of Birth -->
+    <div class="inline-container">
+      <label for="dob" class="p-info">Date of birth: </label>
+      <button class="learn-more-btn" id="dobB" onclick="toggleExpandedContent('expandedContent4')">Learn More</button>
+      <img src="read_description_icon.png" alt="Read Description" class="read-description-btn" onclick="readDescription()"/>
+    </div>
+    <div class="expanded-content" id="expandedContent4">
+      <p>This is the additional information you'll see when you click on the "Learn More" button. It can include detailed descriptions, helpful tips, and additional resources.</p>
+    </div>
+    <br /><br />
+    <input type="date" id="dob" name="dob" required class="inputbox"/><br /><br />
+    <!-- Date of Death -->
+    <div class="inline-container">
+      <label for="dod" class="p-info">Date of death: </label>
+      <button class="learn-more-btn" id="dodB" onclick="toggleExpandedContent('expandedContent5')">Learn More</button>
+      <img src="read_description_icon.png" alt="Read Description" class="read-description-btn" onclick="readDescription()"/>
+    </div>
+    <div class="expanded-content" id="expandedContent5">
+      <p>This is the additional information you'll see when you click on the "Learn More" button. It can include detailed descriptions, helpful tips, and additional resources.</p>
+    </div>
+    <br /><br />
+    <!-- Place of Death -->
+    <div class="inline-container">
+      <label for="place" style="font-size: 2.7em">Place of Death:</label>
+      <button class="learn-more-btn" id="podB" onclick="toggleExpandedContent('expandedContent6')">Learn More</button>
+      <img src="read_description_icon.png" alt="Read Description" class="read-description-btn" onclick="readDescription()"/>
+    </div>
+    <div class="expanded-content" id="expandedContent6">
+      <p>This is the additional information you'll see when you click on the "Learn More" button. It can include detailed descriptions, helpful tips, and additional resources.</p>
+    </div>
+    <br /><br />
+    <input type="text" id="place" name="place" size="40" required class="inputbox"/><br /><br />
+    <!-- Submit Button -->
+    <button class="submit">Submit Form</button>
+  </form>
+</body>
+<footer>
+  <!-- Footer -->
+  <!--Added green color to get an idea of the height and width of footer-->
+  <div class="footer">
+    <p class="footer-text">&copy; Natural Burial</p>
+    <div class="contact-us">
+      <p>Email: <a href="mailto:naturalburial@gmail.com">naturalburial@gmail.com</a></p>
+      <p>Phone: <a href="tel:902472222">902-472-222</a></p>
+    </div>
+  </div>
+</footer>
+</html>
+
+   
+
