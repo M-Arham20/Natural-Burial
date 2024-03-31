@@ -1,55 +1,74 @@
 <!--
-    Authors: 
-   Group Leader: Muhammad Arham Mussawar  A00478275
-   Muhammad Asfand Yar Khan  A00465145
-   Muttyeb Tahir  A00471177
-   Subhan Nadeem  A00469690 -->
+Authors: 
+Group Leader: Muhammad Arham Mussawar  A00478275
+Muhammad Asfand Yar Khan  A00465145
+Muttyeb Tahir  A00471177
+Subhan Nadeem  A00469690 -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natural Burial</title>
-    <!-- FILE HEADER -->
+    <title>Natural Burial Plans</title>
+
     <!-- Purpose: Styles for home page -->
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="/P1 (Main Page)/home.css" />
     <!-- FILE HEADER -->
     <!-- Purpose: JavaScript for home page -->
     <script src="home.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="t.js"></script>
+
   </head>
   <body>
     <!-- Major sections -->
     <!-- Header -->
-    <div class="Header">
-      <img src="/P1 (Main Page)/Logo.jpg" alt="logo" class="header_image" />
+    <div class="flex bg-green-500 text-white h-48 items-center">
+    <img src="/P1 (Main Page)/Logo.jpg" alt="logo" class="mt-2 ml-8 h-36 w-36" />
+    <div class="ml-44 text-center">
+        <p class="text-8xl font-semibold">Natural Burial</p>
+        <hr class="my-2 border-t-2 border-white">
+        <p class="text-5xl text-white font-semibold">"Your final footprint on the Earth."</p>
     </div>
+</div>
+
+  
+  
+  
+
     <!-- Theme Toggle Button -->
-    <button class="theme-toggle" onclick="darkMode()">Toggle Theme</button>
+<button class="theme-toggle bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300 ease-in-out" onclick="darkMode()">Toggle Theme</button>
     <!-- Heading -->
-    <div class="heading">
+    <div class="font-bold text-5xl my-4">
       <h1>Choose your plan</h1>
     </div>
-    <!-- Subscription boxes -->
-    <div class="box">
-      <a href="/Basic_Subscription/BasicSubscription.html">
-        <h2>Basic: $2,500</h2>
-        <p>Click here to view the Basic Subscription Plan</p>
-      </a>
-    </div>
-    <div class="box">
-      <a href="/Standard_Subscription/StandardSubscription.html">
-        <h2>Standard:$5,000</h2>
-        <p>Click here to view the Standard Subscription Plan</p>
-      </a>
-    </div>
-    <div class="box">
-      <a href="/Premium_Subscription/PremiumSubscription.html">
-        <h2>Premium:$10,000</h2>
-        <p>Click here to view the Premium Subscription Plan</p>
-      </a>
-    </div>
-    <!-- Personal info section -->
+
+    
+<!--- Buttons ---->
+<div class="space-y-4">
+  <button onclick="scrollToSubscription('plan1')" class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom">
+    <h2 class="text-3xl">Basic Subscription: $2,500</h2>
+    <p>Click here to view the subscription plan</p>
+  </button>
+  <br><br>
+  <button onclick="scrollToSubscription('plan2')" class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom">
+    <h2 class="text-3xl">Standard Subscription: $5,000</h2>
+    <p>Click here to view the subscription plan</p>
+  </button>
+  <br><br>
+  <button onclick="scrollToSubscription('plan3')" class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom">
+    <h2 class="text-3xl">Premium Subscription: $10,000</h2>
+    <p>Click here to view the subscription plan</p>
+  </button>
+</div>
+
+    
+
+    
+    
+
+
     <div style="padding: 0.1em">
       <h1 style="font-size: 2.5em">
         Personal Info of deceased: according to the act of birth
@@ -67,7 +86,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -100,7 +119,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -132,7 +151,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -165,7 +184,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -197,7 +216,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -229,7 +248,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -262,7 +281,7 @@
           Learn More
         </button>
         <img
-          src="read_description_icon.png"
+          src="/P1 (Main Page)/read_description_icon.png"
           alt="Read Description"
           class="read-description-btn"
           onclick="readDescription()"
@@ -289,7 +308,278 @@
       <!-- Submit Button -->
       <button class="submit">Submit Form</button>
     </form>
+
+    <!-- Subscription Plan 1 -->
+    <div id="plan1" class="subscription-plan">
+      <h2>Basic Subscription</h2>
+      <!-- Placeholder tags -->
+      <p class="text">Services offered under Basic subscription:</p>
+      <ul class="text">
+        <!-- Basic Plot section -->
+        <li>
+          Basic Plot.
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/BPlot.jpg"
+              alt="Basic Plot Image"
+              
+            />
+          </div>
+        </li>
+        <!-- Basic Shroud section -->
+        <li>
+          Basic Shroud
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/BShroud.jpeg"
+              alt="Basic Shroud"
+              
+            />
+          </div>
+        </li>
+        <!-- Basic Stones section -->
+        <li>
+          Basic Stones
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/BStones.jpeg"
+              alt="BasicStones"
+              
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Subscription Plan 2 -->
+    <div id="plan2" class="subscription-plan">
+      <h2>Standard Subscription</h2>
+      <!-- Placeholder tags -->
+      <p class="text">Services offered under Standard subscription:</p>
+      <ul class="text">
+        <!-- Standard Plot section -->
+        <li>
+          Standard Plot.
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/SPlot.jpg"
+              alt="Standard Plot Image"
+              
+            />
+          </div>
+        </li>
+        <!-- Standard Casket section -->
+        <li>
+          Standard Casket
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/SCasket.jpg"
+              alt="StandardCasket"
+             
+            />
+          </div>
+        </li>
+        <!-- Premium Tombstone section -->
+        <li>
+          Premium Tombstone
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/STombstone.jpg"
+              alt="PremiumTombstone"
+              
+            />
+          </div>
+        </li>
+        <!-- Decorations for tombstone section -->
+        <li>
+          Decorations for tombstone
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/Decorations.jpg"
+              alt="Decorations"
+              
+            />
+            <!-- Image for decoration -->
+            <div class="radio-options">
+              <input
+                type="radio"
+                id="decorationOption1"
+                name="decoration"
+                value="Option 1"
+              />
+              <label for="decorationOption1">Biodegradable Plaques</label><br />
+
+              <input
+                type="radio"
+                id="decorationOption2"
+                name="decoration"
+                value="Option 2"
+              />
+              <label for="decorationOption2">Ceramic Markers</label><br />
+
+              <input
+                type="radio"
+                id="decorationOption3"
+                name="decoration"
+                value="Option 3"
+              />
+              <label for="decorationOption3">Handmade Memorials</label><br />
+
+              <input
+                type="radio"
+                id="decorationOption4"
+                name="decoration"
+                value="Option 4"
+                width="800em"
+                height="500em"
+              />
+              <label for="decorationOption4">Wildflower Seeds</label><br />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Subscription Plan 3 -->
+    <div id="plan3" class="subscription-plan">
+      <h2>Premium Subscription</h2>
+      <!-- Placeholder tags -->
+      <p class="text">Services offered under premium subscription:</p>
+      <ul class="text">
+        <!-- Tombstone section -->
+        <li>
+          Premium Tombstone.
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/PTombstone1.jpg"
+              alt="Tombstone Image"
+              
+            />
+          </div>
+        </li>
+        <!-- GPS section -->
+        <li>
+          G.P.S accessible
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/GPS.jpeg"
+              alt="GPSScreenShot"
+              
+            />
+          </div>
+        </li>
+        <!-- Casket options section -->
+        <li>
+          Different options for caskets:
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/PCasket.jpg"
+              alt="CasketImage"
+              
+            />
+            <!-- Image for casket -->
+            <div class="radio-options">
+              <input
+                type="radio"
+                id="casketOption1"
+                name="casket"
+                value="Option 1"
+              />
+              <label for="casketOption1">Recycled Cardboard</label><br />
+
+              <input
+                type="radio"
+                id="casketOption2"
+                name="casket"
+                value="Option 2"
+              />
+              <label for="casketOption2">Willow</label><br />
+
+              <input
+                type="radio"
+                id="casketOption3"
+                name="casket"
+                value="Option 3"
+              />
+              <label for="casketOption3">Seagrass Casket</label><br />
+
+              <input
+                type="radio"
+                id="casketOption4"
+                name="casket"
+                value="Option 4"
+              />
+              <label for="casketOption4">Woven Casket</label><br />
+            </div>
+          </div>
+        </li>
+        <!-- Decoration options section -->
+        <li>
+          Custom Decorations for tombstone:
+          <div class="image-container">
+            <img
+              class="block h-64 border-solid border-8 rounded-full border-red-900"
+              src="/Pictures/Decorations.jpg"
+              alt="DecorationImage"
+              
+            />
+            <!-- Image for decoration -->
+            <div class="radio-options">
+              <input
+                type="radio"
+                id="decorationOption1"
+                name="decoration"
+                value="Option 1"
+              />
+              <label for="decorationOption1">Biodegradable Plaques</label><br />
+
+              <input
+                type="radio"
+                id="decorationOption2"
+                name="decoration"
+                value="Option 2"
+              />
+              <label for="decorationOption2">Ceramic Markers</label><br />
+
+              <input
+                type="radio"
+                id="decorationOption3"
+                name="decoration"
+                value="Option 3"
+              />
+              <label for="decorationOption3">Handmade Memorials</label><br />
+
+              <input
+                type="radio"
+                id="decorationOption4"
+                name="decoration"
+                value="Option 4"
+              />
+              <label for="decorationOption4">Wildflower Seeds</label><br />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      function scrollToSubscription(planId) {
+        var element = document.getElementById(planId);
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    </script>
   </body>
+
   <footer>
     <!-- Footer -->
     <!--Added green color to get an idea of the height and width of footer-->
