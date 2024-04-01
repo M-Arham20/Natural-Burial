@@ -36,6 +36,23 @@ function submitForm() {
   var place = document.getElementById("place").value;
   var phone = document.getElementById("phone").value;
 
+  // Gather selected decoration options
+  var decorations = [];
+  var decorationOptions = document.getElementsByName("decoration[]");
+  decorationOptions.forEach(function (option) {
+    if (option.checked) {
+      decorations.push(option.value);
+    }
+  });
+
+  var casket = "";
+  var casketOptions = document.getElementsByName("casket");
+  casketOptions.forEach(function (option) {
+    if (option.checked) {
+      casket = option.value;
+    }
+  });
+
   // Create JSON object
   var personalInfo = {
     surname: surname,
@@ -45,8 +62,11 @@ function submitForm() {
     dod: dod,
     place: place,
     phone: phone,
+    decorations: decorations, // Include selected decorations
+    casket: casket, // Include chosen casket type
   };
 
+  // Store personal info in localStorage
   if (typeof Storage !== "undefined") {
     window.localStorage.setItem("personal_Info", JSON.stringify(personalInfo));
   }
@@ -60,7 +80,6 @@ function submitForm() {
   document.getElementById("place").value = "";
   document.getElementById("phone").value = "";
 }
-
 function retrieving() {
   let retrievedData;
   if (typeof Storage !== "undefined") {
@@ -73,19 +92,39 @@ function retrieving() {
   document.getElementById("dod").value = retrievedData.dod;
   document.getElementById("place").value = retrievedData.place;
   document.getElementById("phone").value = retrievedData.phone;
+  var selectedDecorations = retrievedData.decorations;
+
+  selectedDecorations.forEach(function (option) {
+    var checkbox = document.querySelector(
+      "input[name='decoration[]'][value='" + option + "']"
+    );
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+  });
+
+  // Select the previously selected casket option
+  var selectedCasket = retrievedData.casket;
+  var casketOptions = document.getElementsByName("casket");
+  casketOptions.forEach(function (option) {
+    if (option.value === selectedCasket) {
+      option.checked = true;
+    }
+  });
 }
+
 function autoHyphen(input) {
   // Remove any existing hyphens and non-numeric characters
-  let phoneNumber = input.value.replace(/[^0-9]/g, '');
+  let phoneNumber = input.value.replace(/[^0-9]/g, "");
 
   // Add hyphen after the first three digits if present
   if (phoneNumber.length > 3) {
-      phoneNumber = phoneNumber.slice(0, 3) + '-' + phoneNumber.slice(3);
+    phoneNumber = phoneNumber.slice(0, 3) + "-" + phoneNumber.slice(3);
   }
 
   // Add hyphen after the next three digits if present
   if (phoneNumber.length > 7) {
-      phoneNumber = phoneNumber.slice(0, 7) + '-' + phoneNumber.slice(7);
+    phoneNumber = phoneNumber.slice(0, 7) + "-" + phoneNumber.slice(7);
   }
 
   // Update the input value
