@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: rgb(248, 248, 248);
 }
 .Header {
@@ -126,9 +126,9 @@ body {
 .footer {
   background-color: green;
   padding: 10px;
-  text-align: center; /* Center align text */
+  text-align: center; 
   font-size: 2.5em;
-  position: relative; /* Add this to make positioning children relative */
+  position: relative; 
 }
 
 .footer-text {
@@ -138,37 +138,22 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.contact-us {
-  position: absolute; /* Position relative to the footer */
-  bottom: 0; /* Align at the bottom of the footer */
-  width: 100%; /* Take full width of the footer */
-  display: flex;
-  justify-content: space-between; /* Space between items */
-}
 
-.contact-us p {
-  margin: 0.5em; /* Add some spacing between lines */
-}
 
-.contact-us p:first-child {
-  margin-right: auto; /* Push to the left */
-}
-
-.contact-us p:last-child {
-  margin-left: auto; /* Push to the right */
-}
 
 .subscription-plan {
   padding: 20px;
   background-color: #f0f0f0;
-}
+} */
 
 .w-custom {
   width: 35em;
 }
+.wi{
+  width: 10em;
+}
 
-/* Styles for the Back to the Top button */
-.back-to-top {
+/* .back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -183,7 +168,7 @@ body {
 
 .back-to-top:hover {
   background-color: #0056b3;
-}
+} */
 
 
-
+  

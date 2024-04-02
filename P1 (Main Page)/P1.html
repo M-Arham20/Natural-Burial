@@ -18,6 +18,8 @@ Subhan Nadeem  A00469690 -->
     <!-- Purpose: JavaScript for home page -->
     <script src="home.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let timeout;
@@ -49,7 +51,7 @@ Subhan Nadeem  A00469690 -->
             element.addEventListener("mouseover", function () {
               timeout = setTimeout(() => {
                 speak(this.textContent);
-              }, 5000);
+              }, 2000);
             });
 
             element.addEventListener("mouseout", function () {
@@ -59,7 +61,7 @@ Subhan Nadeem  A00469690 -->
         }
 
         // Call the function to handle mouseover events for specific elements
-        handleMouseoverEvent("h1, label, p, .box, footer p,li,radio");
+        handleMouseoverEvent("h1, label, p, .box, footer p,li,radio,button,input");
       });
       window.speechSynthesis.onvoiceschanged = function () {
         var voices = window.speechSynthesis.getVoices();
@@ -123,96 +125,71 @@ Subhan Nadeem  A00469690 -->
         <p>Click here to view the subscription plan</p>
       </button>
     </div>
-
+<br>
     <div style="padding: 0.1em">
       <h1 style="font-size: 2.5em">
         Personal Info of deceased: according to the act of birth
       </h1>
     </div>
+    <br>
     <form>
+
+
       <!-- Last Name -->
-      <div class="inline-container">
-        <label for="surname" class="p-info">Last Name: </label>
-        <button
-          class="learn-more-btn"
-          id="last"
-          onclick="toggleExpandedContent('expandedContent1')"
-        >
-          Learn More
-        </button>
-        <img
-          src="/P1 (Main Page)/read_description_icon.png"
-          alt="Read Description"
-          class="read-description-btn"
-          onclick="readDescription()"
-        />
-      </div>
-      <div class="expanded-content" id="expandedContent1">
-        <p>
-          This is the additional information you'll see when you click on the
-          "Learn More" button. It can include detailed descriptions, helpful
-          tips, and additional resources.
-        </p>
-      </div>
-      <br /><br />
-      <input
-        type="text"
-        id="surname"
-        name="surname"
-        size="20"
-        class="inputbox"
-        required
-      /><br /><br />
-      <!-- Middle Name(s) -->
-      <div class="inline-container">
-        <label for="middleName" class="p-info">Middle name(s): </label>
-        <button
-          class="learn-more-btn"
-          id="middle"
-          onclick="toggleExpandedContent('expandedContent2')"
-        >
-          Learn More
-        </button>
-        <img
-          src="/P1 (Main Page)/read_description_icon.png"
-          alt="Read Description"
-          class="read-description-btn"
-          onclick="readDescription()"
-        />
-      </div>
-      <div class="expanded-content" id="expandedContent2">
-        <p>
-          This is the additional information you'll see when you click on the
-          "Learn More" button. It can include detailed descriptions, helpful
-          tips, and additional resources.
-        </p>
-      </div>
-      <br /><br />
-      <input
-        type="text"
-        class="inputbox"
-        id="middleName"
-        name="middleName"
-        size="20"
-      /><br /><br />
-      <!-- First Name -->
-      <div class="inline-container">
+<div class="ml-2">
+  <div class="flex items-center">
+    <label for="surname" class="text-8xl">Last Name: </label>
+    <button class="ml-44 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onclick="toggleExpandedContent('expandedContent1')">
+      Learn More
+    </button>
+  </div>
+  <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent1">
+    <p>
+      This is the additional information you'll see when you click on the
+      "Learn More" button. It can include detailed descriptions, helpful
+      tips, and additional resources.
+    </p>
+  </div>
+  <br>
+  <input type="text" id="surname" name="surname" class="text-8xl border-8 border-black py-2 px-3 font-normal" required />
+</div>
+<br /><br />
+
+
+    
+
+     <!-- Middle Name(s) -->
+<div class="ml-2">
+  <div class="flex items-center">
+    <label for="middleName" class="text-8xl">Middle name(s): </label>
+    <button class="ml-8 py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onclick="toggleExpandedContent('expandedContent2')">
+      Learn More
+    </button>
+  </div>
+  <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent2">
+    <p>
+      This is the additional information you'll see when you click on the
+      "Learn More" button. It can include detailed descriptions, helpful
+      tips, and additional resources.
+    </p>
+  </div>
+  <br>
+  <input type="text" id="middleName" name="middleName" class="text-8xl border-8 border-black py-2 px-3 font-normal" /><br><br>
+</div>
+
+     <!-- First Name -->
+      <div class="ml-2">
         <label for="firstName" class="p-info"> First Name: </label>
         <button
-          class="learn-more-btn"
+          class="ml-8 py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
           id="first"
           onclick="toggleExpandedContent('expandedContent3')"
         >
           Learn More
         </button>
-        <img
-          src="/P1 (Main Page)/read_description_icon.png"
-          alt="Read Description"
-          class="read-description-btn"
-          onclick="readDescription()"
-        />
       </div>
-      <div class="expanded-content" id="expandedContent3">
+    </div>
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent3">
         <p>
           This is the additional information you'll see when you click on the
           "Learn More" button. It can include detailed descriptions, helpful
@@ -238,12 +215,6 @@ Subhan Nadeem  A00469690 -->
         >
           Learn More
         </button>
-        <img
-          src="/P1 (Main Page)/read_description_icon.png"
-          alt="Read Description"
-          class="read-description-btn"
-          onclick="readDescription()"
-        />
       </div>
       <div class="expanded-content" id="expandedContent4">
         <p>
@@ -270,12 +241,6 @@ Subhan Nadeem  A00469690 -->
         >
           Learn More
         </button>
-        <img
-          src="/P1 (Main Page)/read_description_icon.png"
-          alt="Read Description"
-          class="read-description-btn"
-          onclick="readDescription()"
-        />
       </div>
       <div class="expanded-content" id="expandedContent5">
         <p>
@@ -302,12 +267,6 @@ Subhan Nadeem  A00469690 -->
         >
           Learn More
         </button>
-        <img
-          src="/P1 (Main Page)/read_description_icon.png"
-          alt="Read Description"
-          class="read-description-btn"
-          onclick="readDescription()"
-        />
       </div>
       <div class="expanded-content" id="expandedContent6">
         <p>
@@ -335,12 +294,6 @@ Subhan Nadeem  A00469690 -->
         >
           Learn More
         </button>
-        <img
-          src="/P1 (Main Page)/read_description_icon.png"
-          alt="Read Description"
-          class="read-description-btn"
-          onclick="readDescription()"
-        />
       </div>
       <div class="expanded-content" id="expandedContent7">
         <p>
