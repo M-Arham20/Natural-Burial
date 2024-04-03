@@ -8,8 +8,6 @@ function toggleExpandedContent(contentId) {
   }
 }
 
-
-
 // Function to scroll to the top of the page
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -22,8 +20,8 @@ function scrollToSubscription(planId) {
 }
 
 // Optional: Hide the button when the page is at the top
-window.onscroll = function() {
-  var backToTopButton = document.getElementById('back-to-top');
+window.onscroll = function () {
+  var backToTopButton = document.getElementById("back-to-top");
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     backToTopButton.style.display = "block";
   } else {
@@ -137,17 +135,20 @@ function autoHyphen(input) {
   input.value = phoneNumber;
 }
 
-  // // JavaScript to handle the selection and color change
-  // document.addEventListener('DOMContentLoaded', function() {
-  //   const radioButtons = document.querySelectorAll('input[name="subscriptionPlan"]');
-  //   radioButtons.forEach(radio => {
-  //     radio.addEventListener('change', function() {
-  //       document.querySelectorAll('#plan1, #plan2, #plan3').forEach(div => {
-  //         div.classList.remove('bg-gray-300'); // Remove the color from all plans
-  //       });
-  //       if (this.checked) {
-  //         document.querySelector(`label[for="${this.id}"]`).closest('.shadow-lg').classList.add('bg-gray-300'); // Add color to the selected plan
-  //       }
-  //     });
-  //   });
-  // });
+// // JavaScript to handle the selection and color change
+// document.addEventListener('DOMContentLoaded', function() {
+//   const radioButtons = document.querySelectorAll('input[name="subscriptionPlan"]');
+//   radioButtons.forEach(radio => {
+//     radio.addEventListener('change', function() {
+//       document.querySelectorAll('#plan1, #plan2, #plan3').forEach(div => {
+//         div.classList.remove('bg-gray-300'); // Remove the color from all plans
+//       });
+//       if (this.checked) {
+//         document.querySelector(`label[for="${this.id}"]`).closest('.shadow-lg').classList.add('bg-gray-300'); // Add color to the selected plan
+//       }
+//     });
+//   });
+// });
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
