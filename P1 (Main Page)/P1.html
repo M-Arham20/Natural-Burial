@@ -348,10 +348,12 @@ Subhan Nadeem  A00469690 -->
 
 
     <!-- Subscription Plan 1 -->
-    <div id="plan1" class="max-w-4xl  p-6 bg-white rounded-lg shadow-lg">
-      <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left ">Basic Subscription</h2>
-      <p class="text-xl text-gray-700 mb-8 text-left">Services offered under Bsic Subscription:</p>
-      <ul class="space-y-6">
+    <div id="plan1" class="max-w-4xl p-6 bg-white rounded-lg shadow-lg">
+      <input type="radio" id="colorChange" name="subscription" onclick="changeColor()">
+      <label for="colorChange">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Basic Subscription</h2>
+        <p class="text-xl text-gray-700 mb-8 text-left">Services offered under Basic Subscription:</p>
+        <ul class="space-y-6">
         <li class="flex items-center space-x-6">
           <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BPlot.jpg"
             alt="Basic Plot Image" />
@@ -368,7 +370,16 @@ Subhan Nadeem  A00469690 -->
           <p class="text-3xl font-semibold text-gray-900 text-left">Basic Stones</p>
         </li>
       </ul>
-    </div>
+    </label>
+  </div>
+  
+  <script>
+  function changeColor() {
+    var div = document.getElementById('plan1');
+    div.classList.toggle('bg-gray-300'); // Toggle to a different background color class
+  }
+  </script>
+  
 
 
 
@@ -512,7 +523,7 @@ Subhan Nadeem  A00469690 -->
               </div>
             </div>
           </div>
-          <button class=" submit bg-gray-500 hover:bg-gray-700 text-white font-bold mt-16 py-3 px-6 rounded text-4xl"
+          <button class=" submit bg-gray-500 hover:bg-gray-700 text-white font-bold mt-4 py-3 px-6 rounded text-4xl"
           onclick="submitForm()">Submit Form</button>
         </li>
         
