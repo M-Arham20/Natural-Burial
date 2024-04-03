@@ -137,17 +137,17 @@ function autoHyphen(input) {
   input.value = phoneNumber;
 }
 
-  // // JavaScript to handle the selection and color change
-  // document.addEventListener('DOMContentLoaded', function() {
-  //   const radioButtons = document.querySelectorAll('input[name="subscriptionPlan"]');
-  //   radioButtons.forEach(radio => {
-  //     radio.addEventListener('change', function() {
-  //       document.querySelectorAll('#plan1, #plan2, #plan3').forEach(div => {
-  //         div.classList.remove('bg-gray-300'); // Remove the color from all plans
-  //       });
-  //       if (this.checked) {
-  //         document.querySelector(`label[for="${this.id}"]`).closest('.shadow-lg').classList.add('bg-gray-300'); // Add color to the selected plan
-  //       }
-  //     });
-  //   });
-  // });
+  //fuction for changing the colors
+  document.addEventListener('DOMContentLoaded', function() {
+    const radioButtons = document.querySelectorAll('input[name="subscriptionPlan"]');
+    radioButtons.forEach(radio => {
+      radio.addEventListener('change', function() {
+        document.querySelectorAll('#plan1, #plan2, #plan3').forEach(div => {
+          div.classList.remove('bg-gray-300'); // Remove the color from all plans
+        });
+        if (this.checked) {
+          document.querySelector(`label[for="${this.id}"]`).closest('.shadow-lg').classList.add('bg-gray-300'); // Add color to the selected plan
+        }
+      });
+    });
+  });

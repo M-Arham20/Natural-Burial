@@ -346,197 +346,225 @@ Subhan Nadeem  A00469690 -->
 
     <br><br><br><br>
 
+    <div class="flex flex-col space-y-4">
 
-    <!-- Subscription Plan 1 -->
-    <div id="plan1" class="max-w-4xl p-6 bg-white rounded-lg shadow-lg">
-      <input type="radio" id="colorChange" name="subscription" onclick="changeColor()">
-      <label for="colorChange">
-        <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Basic Subscription</h2>
-        <p class="text-xl text-gray-700 mb-8 text-left">Services offered under Basic Subscription:</p>
-        <ul class="space-y-6">
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BPlot.jpg"
-            alt="Basic Plot Image" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">Basic plot of 6x6</p>
-        </li>
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BShroud.jpeg"
-            alt="Basic Shroud" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">Basic Shroud</p>
-        </li>
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BStones.jpeg"
-            alt="Basic Stones" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">Basic Stones</p>
-        </li>
-      </ul>
-    </label>
-  </div>
-  
-  <script>
-  function changeColor() {
-    var div = document.getElementById('plan1');
-    div.classList.toggle('bg-gray-300'); // Toggle to a different background color class
-  }
-  </script>
-  
+
+      <!-- Subscription Plan 1 -->
+      <div class="flex flex-col space-y-4">
+        <!-- Plan 1 -->
+        <div id="plan1" class="max-w-4xl p-6 bg-white rounded-lg shadow-lg cursor-pointer">
+          <input type="radio" id="radioPlan1" name="subscriptionPlan" class="hidden" onclick="changeColor('plan1')">
+          <label for="radioPlan1" class="flex flex-col space-y-6">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Basic Subscription</h2>
+            <p class="text-xl text-gray-700 mb-8 text-left">Services offered under Basic Subscription:</p>
+            <ul class="space-y-6">
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BPlot.jpg"
+                  alt="Basic Plot Image" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">Basic plot of 6x6</p>
+              </li>
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BShroud.jpeg"
+                  alt="Basic Shroud" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">Basic Shroud</p>
+              </li>
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BStones.jpeg"
+                  alt="Basic Stones" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">Basic Stones</p>
+              </li>
+            </ul>
+          </label>
+        </div>
 
 
 
 
 
-    <!-- Subscription Plan 2 -->
-    <div id="plan2" class="max-w-4xl  p-6 bg-white rounded-lg shadow-lg">
 
 
-      <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">
 
 
-        Standard Subscription
 
-      </h2>
-      <p class="text-xl text-gray-700 mb-8 text-left">
+        <!-- Subscription Plan 2 -->
+
+        <!-- Plan 2 -->
+        <div id="plan2" class="max-w-4xl p-6 bg-white rounded-lg shadow-lg cursor-pointer">
+          <input type="radio" id="radioPlan2" name="subscriptionPlan" class="hidden" onclick="changeColor('plan2')">
+          <label for="radioPlan2" class="flex flex-col space-y-6">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">
 
 
-        Services offered under Standard subscription:
+              Standard Subscription
 
-      </p>
+            </h2>
+            <p class="text-xl text-gray-700 mb-8 text-left">
 
-      <ul class="space-y-6">
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/SPlot.jpg"
-            alt="Standard Plot Image" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">Standard Plot</p>
-        </li>
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/SCasket.jpg"
-            alt="Standard Casket" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">Standard Casket</p>
-        </li>
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/STombstone.jpg"
-            alt="Premium Tombstone" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">Premium Tombstone</p>
-        </li>
-        <li>
-          <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Decorations for tombstone (Maximum 2):</p>
-          <div class="flex items-center space-x-6">
-            <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/Decorations.jpg"
-              alt="Decorations" />
-            <div class="flex flex-col space-y-2">
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption1" name="decoration[]"
-                  value="Biodegradable Plaque for Standard" class="h-6 w-6" />
-                <label for="decorationOption1" class="ml-2 text-xl font-medium text-gray-900">Biodegradable
-                  Plaques</label>
-              </div>
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Standard"
-                  class="h-6 w-6" />
-                <label for="decorationOption2" class="ml-2 text-xl font-medium text-gray-900">Ceramic Markers</label>
-              </div>
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption3" name="decoration[]"
-                  value="Handmade Memorials for Standard" class="h-6 w-6" />
-                <label for="decorationOption3" class="ml-2 text-xl font-medium text-gray-900">Handmade Memorials</label>
-              </div>
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Standard"
-                  class="h-6 w-6" />
-                <label for="decorationOption4" class="ml-2 text-xl font-medium text-gray-900">Wildflower Seeds</label>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+
+              Services offered under Standard subscription:
+
+            </p>
+
+            <ul class="space-y-6">
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/SPlot.jpg"
+                  alt="Standard Plot Image" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">Standard Plot</p>
+              </li>
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/SCasket.jpg"
+                  alt="Standard Casket" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">Standard Casket</p>
+              </li>
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/STombstone.jpg"
+                  alt="Premium Tombstone" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">Premium Tombstone</p>
+              </li>
+              <li>
+                <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Decorations for tombstone (Maximum 2):
+                </p>
+                <div class="flex items-center space-x-6">
+                  <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900"
+                    src="/Pictures/Decorations.jpg" alt="Decorations" />
+                  <div class="flex flex-col space-y-2">
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption1" name="decoration[]"
+                        value="Biodegradable Plaque for Standard" class="h-6 w-6" />
+                      <label for="decorationOption1" class="ml-2 text-xl font-medium text-gray-900">Biodegradable
+                        Plaques</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption2" name="decoration[]"
+                        value="Ceramic Markers for Standard" class="h-6 w-6" />
+                      <label for="decorationOption2" class="ml-2 text-xl font-medium text-gray-900">Ceramic
+                        Markers</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption3" name="decoration[]"
+                        value="Handmade Memorials for Standard" class="h-6 w-6" />
+                      <label for="decorationOption3" class="ml-2 text-xl font-medium text-gray-900">Handmade
+                        Memorials</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption4" name="decoration[]"
+                        value="Wildflower Seeds for Standard" class="h-6 w-6" />
+                      <label for="decorationOption4" class="ml-2 text-xl font-medium text-gray-900">Wildflower
+                        Seeds</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </label>
+        </div>
+
+
+        <!-- Subscription Plan 3 -->
+
+        <!-- Plan 3 -->
+        <div id="plan3" class="max-w-4xl p-6 bg-white rounded-lg shadow-lg cursor-pointer">
+          <input type="radio" id="radioPlan3" name="subscriptionPlan" class="hidden" onclick="changeColor('plan3')">
+          <label for="radioPlan3" class="flex flex-col space-y-6">
+
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Premium Subscription</h2>
+            <p class="text-xl text-gray-700 mb-8 text-left">Services offered under premium subscription:</p>
+            <ul class="space-y-6">
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900"
+                  src="/Pictures/PTombstone1.jpg" alt="Tombstone Image" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">Premium Tombstone</p>
+              </li>
+              <li class="flex items-center space-x-6">
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/GPS.jpeg"
+                  alt="GPSScreenShot" />
+                <p class="text-3xl font-semibold text-gray-900 text-left">G.P.S Accessible</p>
+              </li>
+              <li>
+                <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Different options for caskets:</p>
+                <div class="flex flex-wrap items-center space-x-6">
+                  <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/PCasket.jpg"
+                    alt="CasketImage" />
+                  <div class="flex flex-col space-y-2">
+                    <div class="flex items-center">
+                      <input type="radio" id="casketOption1" name="casket" value="Recycled Cardboard for Premium"
+                        class="h-6 w-6" />
+                      <label for="casketOption1" class="ml-2 text-xl font-medium text-gray-900">Recycled
+                        Cardboard</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="radio" id="casketOption2" name="casket" value="Willow for Premium" class="h-6 w-6" />
+                      <label for="casketOption2" class="ml-2 text-xl font-medium text-gray-900">Willow</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="radio" id="casketOption3" name="casket" value="Seagrass Casket for Premium"
+                        class="h-6 w-6" />
+                      <label for="casketOption3" class="ml-2 text-xl font-medium text-gray-900">Seagrass Casket</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="radio" id="casketOption4" name="casket" value="Woven Casket for Premium"
+                        class="h-6 w-6" />
+                      <label for="casketOption4" class="ml-2 text-xl font-medium text-gray-900">Woven Casket</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Custom Decorations for tombstone:</p>
+                <div class="flex flex-wrap items-center space-x-6">
+                  <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900"
+                    src="/Pictures/Decorations.jpg" alt="DecorationImage" />
+                  <div class="flex flex-col space-y-2">
+                    <!-- Decoration options with added class 'decoration-checkbox' -->
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption1" name="decoration[]"
+                        value="Biodegradable Plaques for Premium" class="h-6 w-6 decoration-checkbox" />
+                      <label for="decorationOption1" class="ml-2 text-xl font-medium text-gray-900">Biodegradable
+                        Plaques</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption2" name="decoration[]"
+                        value="Ceramic Markers for Premium" class="h-6 w-6 decoration-checkbox" />
+                      <label for="decorationOption2" class="ml-2 text-xl font-medium text-gray-900">Ceramic
+                        Markers</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption3" name="decoration[]"
+                        value="Handmade Memorials for Premium" class="h-6 w-6 decoration-checkbox" />
+                      <label for="decorationOption3" class="ml-2 text-xl font-medium text-gray-900">Handmade
+                        Memorials</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="checkbox" id="decorationOption4" name="decoration[]"
+                        value="Wildflower Seeds for Premium" class="h-6 w-6 decoration-checkbox" />
+                      <label for="decorationOption4" class="ml-2 text-xl font-medium text-gray-900">Wildflower
+                        Seeds</label>
+                    </div>
+                  </div>
+                </div>
+                
+              </li>
+
+
+
+
+            </ul>
+
+          </label>
+        </div>
+      </div>
+
+      
+
     </div>
 
-    <!-- Subscription Plan 3 -->
-    <div id="plan3" class="max-w-4xl  p-6 bg-white rounded-lg shadow-lg">
-      <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Premium Subscription</h2>
-      <p class="text-xl text-gray-700 mb-8 text-left">Services offered under premium subscription:</p>
-      <ul class="space-y-6">
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/PTombstone1.jpg"
-            alt="Tombstone Image" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">Premium Tombstone</p>
-        </li>
-        <li class="flex items-center space-x-6">
-          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/GPS.jpeg"
-            alt="GPSScreenShot" />
-          <p class="text-3xl font-semibold text-gray-900 text-left">G.P.S Accessible</p>
-        </li>
-        <li>
-          <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Different options for caskets:</p>
-          <div class="flex flex-wrap items-center space-x-6">
-            <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/PCasket.jpg"
-              alt="CasketImage" />
-            <div class="flex flex-col space-y-2">
-              <div class="flex items-center">
-                <input type="radio" id="casketOption1" name="casket" value="Recycled Cardboard for Premium"
-                  class="h-6 w-6" />
-                <label for="casketOption1" class="ml-2 text-xl font-medium text-gray-900">Recycled Cardboard</label>
-              </div>
-              <div class="flex items-center">
-                <input type="radio" id="casketOption2" name="casket" value="Willow for Premium" class="h-6 w-6" />
-                <label for="casketOption2" class="ml-2 text-xl font-medium text-gray-900">Willow</label>
-              </div>
-              <div class="flex items-center">
-                <input type="radio" id="casketOption3" name="casket" value="Seagrass Casket for Premium"
-                  class="h-6 w-6" />
-                <label for="casketOption3" class="ml-2 text-xl font-medium text-gray-900">Seagrass Casket</label>
-              </div>
-              <div class="flex items-center">
-                <input type="radio" id="casketOption4" name="casket" value="Woven Casket for Premium" class="h-6 w-6" />
-                <label for="casketOption4" class="ml-2 text-xl font-medium text-gray-900">Woven Casket</label>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Custom Decorations for tombstone:</p>
-          <div class="flex flex-wrap items-center space-x-6">
-            <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/Decorations.jpg"
-              alt="DecorationImage" />
-            <div class="flex flex-col space-y-2">
-              <!-- Decoration options with added class 'decoration-checkbox' -->
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption1" name="decoration[]"
-                  value="Biodegradable Plaques for Premium" class="h-6 w-6 decoration-checkbox" />
-                <label for="decorationOption1" class="ml-2 text-xl font-medium text-gray-900">Biodegradable
-                  Plaques</label>
-              </div>
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Premium"
-                  class="h-6 w-6 decoration-checkbox" />
-                <label for="decorationOption2" class="ml-2 text-xl font-medium text-gray-900">Ceramic Markers</label>
-              </div>
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption3" name="decoration[]" value="Handmade Memorials for Premium"
-                  class="h-6 w-6 decoration-checkbox" />
-                <label for="decorationOption3" class="ml-2 text-xl font-medium text-gray-900">Handmade Memorials</label>
-              </div>
-              <div class="flex items-center">
-                <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Premium"
-                  class="h-6 w-6 decoration-checkbox" />
-                <label for="decorationOption4" class="ml-2 text-xl font-medium text-gray-900">Wildflower Seeds</label>
-              </div>
-            </div>
-          </div>
-          <button class=" submit bg-gray-500 hover:bg-gray-700 text-white font-bold mt-4 py-3 px-6 rounded text-4xl"
-          onclick="submitForm()">Submit Form</button>
-        </li>
-        
-
-
-
-      </ul>
-    </div>
 
   </form>
 
-  <body>
-
+  <button
+  class=" submit bg-gray-500 hover:bg-gray-700 text-white font-bold mt-4 py-3 px-6 rounded text-4xl mb-7+
+  "
+  onclick="submitForm()">Submit Form</button>
 
 
     <button id="back-to-top" class="fixed bottom-5 right-5 bg-gray-500 text-white p-2.5 rounded cursor-pointer z-50"
@@ -544,7 +572,6 @@ Subhan Nadeem  A00469690 -->
       Back to the top</button>
 
 
-  </body>
 
   <footer class="bg-green-500">
     <div class="container mx-auto py-4 text-center text-white">
