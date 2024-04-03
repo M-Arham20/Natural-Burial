@@ -8,11 +8,7 @@ function toggleExpandedContent(contentId) {
   }
 }
 
-// Function to read the description text
-function readDescription() {
-  var descriptionText = document.getElementById("expandedContent").innerText;
-  alert(descriptionText);
-}
+
 
 // Function to scroll to the top of the page
 function scrollToTop() {
@@ -24,6 +20,16 @@ function scrollToSubscription(planId) {
   var element = document.getElementById(planId);
   element.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+// Optional: Hide the button when the page is at the top
+window.onscroll = function() {
+  var backToTopButton = document.getElementById('back-to-top');
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+};
 
 // Function to handle form submission
 function submitForm() {

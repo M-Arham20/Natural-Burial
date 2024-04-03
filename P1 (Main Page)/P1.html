@@ -128,16 +128,16 @@ Subhan Nadeem  A00469690 -->
     <!---- Last Name------->
     <div class="flex items-center">
       <button
-        class="mr-7 ml-6 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+        class="mr-7 ml-6 py-2 px-2 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600 w-44   h-32"
         onclick="toggleExpandedContent('expandedContent1')">
         Learn More
       </button>
-      <div> <label for="surname" class="text-7xl mr-14 ">Last Name: </label>
+      <div> <label for="surname" class="text-7xl mr- ">Last <br>Name: </label>
       </div>
 
 
 
-      <input type="text" id="surname" name="surname" class="text-8xl border-8 border-black py-1 px-3 font-normal wi"
+      <input type="text" id="surname" name="surname" class="text-8xl border-8 border-black py-1 px-3 ml-28 font-normal wi"
         required />
     </div>
     <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent1">
@@ -147,21 +147,23 @@ Subhan Nadeem  A00469690 -->
         tips, and additional resources.
       </p>
     </div>
-
+    <br><br>
 
 
     <!-- Middle Name(s) -->
     <div class="flex items-center">
       <button
-      class="mr-7 ml-6 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-      onclick="toggleExpandedContent('expandedContent1')">
-      Learn More
-    </button>
-      <div> <label for="middleName" class="text-8xl mr-0">Middle Names:</label>
+        class="mr-7 ml-6 py-2 px-4 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600 w-44   h-32"
+        onclick="toggleExpandedContent('expandedContent2')">
+        Learn More
+      </button>
+      <div> <label for="middleName" class="text-7xl mr-20">Middle <br>Names:</label>
 
       </div>
-      <div><input type="text" id="middleName" name="middleName"
-          class="text-8xl border-8 border-black mr-10 py-1 px-3 font-normal wi" /></div>
+      <div>
+        <input type="text" id="middleName" name="middleName"
+          class="text-8xl border-8 border-black  py-1 px-3 font-normal wi" />
+      </div>
 
     </div>
     <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent2">
@@ -171,412 +173,25 @@ Subhan Nadeem  A00469690 -->
         tips, and additional resources.
       </p>
     </div>
-    <br>
-    <input type="text" id="middleName" name="middleName" class="text-8xl border-8 border-black ml-2 py-2 px-3 font-normal" /><br><br> 
-    
-  
-       <!-- First Name -->
-       
-          <label for="firstName" class="text-8xl"> First Name: </label>
-          <button class="ml-96 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onclick="toggleExpandedContent('expandedContent3')">
-            Learn More
-          </button>
-        </div>
-      </div>
-      <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent3">
-          <p>
-            This is the additional information you'll see when you click on the
-            "Learn More" button. It can include detailed descriptions, helpful
-            tips, and additional resources.
-          </p>
-        </div>
-        <br />
-        <input type="text" id="firstName" name="middleName" class="text-8xl border-8 border-black ml-2 py-2 px-3 font-normal" /><br><br>
-
-
-        <!-- Date of Birth -->
-        
-          <label for="dob" class="text-8xl mr-5">Date of birth: </label>
-          <button class="ml-40 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onclick="toggleExpandedContent('expandedContent4')">
-            Learn More
-          </button>
-        </div>
-        <div class="expanded-content" id="expandedContent4">
-          <p>
-            This is the additional information you'll see when you click on the
-            "Learn More" button. It can include detailed descriptions, helpful
-            tips, and additional resources.
-          </p>
-        </div>
-        <br /><br />
-        <input
-          type="date"
-          id="dob"
-          name="dob"
-          required
-          class="text-8xl border-8 border-black ml-2 py-2 px-3 font-normal"        /><br /><br />
-        <!-- Date of Death -->
-        <div class="inline-container">
-          <label for="dod" class="p-info">Date of death: </label>
-          <button
-            class="learn-more-btn"
-            id="dodB"
-            onclick="toggleExpandedContent('expandedContent5')"
-          >
-            Learn More
-          </button>
-        </div>
-        <div class="expanded-content" id="expandedContent5">
-          <p>
-            This is the additional information you'll see when you click on the
-            "Learn More" button. It can include detailed descriptions, helpful
-            tips, and additional resources.
-          </p>
-        </div>
-        <br /><br />
-        <input
-          type="date"
-          id="dod"
-          name="dod"
-          required
-          class="inputbox"
-        /><br /><br />
-        <!-- Place of Death -->
-        <div class="inline-container">
-          <label for="place" style="font-size: 2.7em">Place of Death:</label>
-          <button
-            class="learn-more-btn"
-            id="podB"
-            onclick="toggleExpandedContent('expandedContent6')"
-          >
-            Learn More
-          </button>
-        </div>
-        <div class="expanded-content" id="expandedContent6">
-          <p>
-            This is the additional information you'll see when you click on the
-            "Learn More" button. It can include detailed descriptions, helpful
-            tips, and additional resources.
-          </p>
-        </div>
-        <br /><br />
-        <input
-          type="text"
-          id="place"
-          name="place"
-          size="40"
-          required
-          class="inputbox"
-        /><br /><br />
-        <!-- Date of Birth -->
-        <div class="inline-container">
-          <label for="phone" class="p-info">Phone Number: </label>
-          <button
-            class="learn-more-btn"
-            id="phoneB"
-            onclick="toggleExpandedContent('expandedContent7')"
-          >
-            Learn More
-          </button>
-        </div>
-        <div class="expanded-content" id="expandedContent7">
-          <p>
-            This is the additional information you'll see when you click on the
-            "Learn More" button. It can include detailed descriptions, helpful
-            tips, and additional resources.
-          </p>
-        </div>
-        <br /><br />
-        <input
-          type="tel"
-          class="inputbox"
-          id="phone"
-          name="phone"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          placeholder="123-456-7890"
-          required
-          oninput="autoHyphen(this)"
-        />
-  
-        <br /><br />
-     
-      <!-- Subscription Plan 1 -->
-      <div id="plan1" class="subscription-plan">
-        <h2>Basic Subscription</h2>
-        <!-- Placeholder tags -->
-        <p class="text">Services offered under Basic subscription:</p>
-        <ul class="text">
-          <!-- Basic Plot section -->
-          <li>
-            Basic Plot.
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/BPlot.jpg"
-                alt="Basic Plot Image"
-              />
-            </div>
-          </li>
-          <!-- Basic Shroud section -->
-          <li>
-            Basic Shroud
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/BShroud.jpeg"
-                alt="Basic Shroud"
-              />
-            </div>
-          </li>
-          <!-- Basic Stones section -->
-          <li>
-            Basic Stones
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/BStones.jpeg"
-                alt="BasicStones"
-              />
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Subscription Plan 2 -->
-      <div id="plan2" class="subscription-plan">
-        <h2>Standard Subscription</h2>
-        <!-- Placeholder tags -->
-        <p class="text">Services offered under Standard subscription:</p>
-        <ul class="text">
-          <!-- Standard Plot section -->
-          <li>
-            Standard Plot.
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/SPlot.jpg"
-                alt="Standard Plot Image"
-              />
-            </div>
-          </li>
-          <!-- Standard Casket section -->
-          <li>
-            Standard Casket
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/SCasket.jpg"
-                alt="StandardCasket"
-              />
-            </div>
-          </li>
-          <!-- Premium Tombstone section -->
-          <li>
-            Premium Tombstone
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/STombstone.jpg"
-                alt="PremiumTombstone"
-              />
-            </div>
-          </li>
-          <!-- Decorations for tombstone section -->
-          <li>
-            Decorations for tombstone (Maximum 2):
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/Decorations.jpg"
-                alt="Decorations"
-              />
-              <!-- Image for decoration -->
-              <div class="radio-options">
-                <input
-                  type="checkbox"
-                  id="decorationOption1"
-                  name="decoration[]"
-                  value="Biodegradable Plaque for Standard"
-                />
-                <label for="decorationOption1">Biodegradable Plaques</label
-                ><br />
-
-                <input
-                  type="checkbox"
-                  id="decorationOption2"
-                  name="decoration[]"
-                  value="Ceramic Markers for Standard"
-                />
-                <label for="decorationOption2">Ceramic Markers</label><br />
-
-                <input
-                  type="checkbox"
-                  id="decorationOption3"
-                  name="decoration[]"
-                  value="Handmade Memorials for Standard"
-                />
-                <label for="decorationOption3">Handmade Memorials</label><br />
-
-                <input
-                  type="checkbox"
-                  id="decorationOption4"
-                  name="decoration[]"
-                  value="Wildflower Seeds for Standard"
-                  width="800em"
-                  height="500em"
-                />
-                <label for="decorationOption4">Wildflower Seeds</label><br />
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Subscription Plan 3 -->
-      <div id="plan3" class="subscription-plan">
-        <h2>Premium Subscription</h2>
-        <!-- Placeholder tags -->
-        <p class="text">Services offered under premium subscription:</p>
-        <ul class="text">
-          <!-- Tombstone section -->
-          <li>
-            Premium Tombstone.
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/PTombstone1.jpg"
-                alt="Tombstone Image"
-              />
-            </div>
-          </li>
-          <!-- GPS section -->
-          <li>
-            G.P.S accessible
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/GPS.jpeg"
-                alt="GPSScreenShot"
-              />
-            </div>
-          </li>
-          <!-- Casket options section -->
-          <li>
-            Different options for caskets:
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/PCasket.jpg"
-                alt="CasketImage"
-              />
-              <!-- Image for casket -->
-              <div class="radio-options">
-                <input
-                  type="radio"
-                  id="casketOption1"
-                  name="casket"
-                  value="Recycled Cardboard for Premium"
-                />
-                <label for="casketOption1">Recycled Cardboard</label><br />
-
-                <input
-                  type="radio"
-                  id="casketOption2"
-                  name="casket"
-                  value="Willow for Premium"
-                />
-                <label for="casketOption2">Willow</label><br />
-
-                <input
-                  type="radio"
-                  id="casketOption3"
-                  name="casket"
-                  value="Seagrass Casket for Premium"
-                />
-                <label for="casketOption3">Seagrass Casket</label><br />
-
-                <input
-                  type="radio"
-                  id="casketOption4"
-                  name="casket"
-                  value="Woven Casket for Premium"
-                />
-                <label for="casketOption4">Woven Casket</label><br />
-              </div>
-            </div>
-          </li>
-          <!-- Decoration options section -->
-          <li>
-            Custom Decorations for tombstone:
-            <div class="image-container">
-              <img
-                class="block h-64 border-solid border-8 rounded-full border-red-900"
-                src="/Pictures/Decorations.jpg"
-                alt="DecorationImage"
-              />
-              <!-- Image for decoration -->
-              <div class="checkbox-options">
-                <input
-                  type="checkbox"
-                  id="decorationOption1"
-                  name="decoration[]"
-                  value="Biodegradable Plaques for Premium"
-                />
-                <label for="decorationOption1">Biodegradable Plaques</label
-                ><br />
-
-                <input
-                  type="checkbox"
-                  id="decorationOption2"
-                  name="decoration[]"
-                  value="Ceramic Markers for Premium"
-                />
-                <label for="decorationOption2">Ceramic Markers</label><br />
-
-                <input
-                  type="checkbox"
-                  id="decorationOption3"
-                  name="decoration[]"
-                  value="Handmade Memorials for Premium"
-                />
-                <label for="decorationOption3">Handmade Memorials</label><br />
-
-                <input
-                  type="checkbox"
-                  id="decorationOption4"
-                  name="decoration[]"
-                  value="Wildflower Seeds for Premium"
-                />
-                <label for="decorationOption4">Wildflower Seeds</label><br />
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </form>
-    <button class="submit" onclick="submitForm()">Submit Form</button>
-    <!-- Back to the Top button -->
-    <button onclick="scrollToTop()" class="back-to-top">Back to the Top</button>
-  </body>
-
-  <footer>
-    <!-- Footer -->
-    <!--Added green color to get an idea of the height and width of footer-->
-    <div class="footer">
-      <p>&copy; Natural Burial</p>
-    </div>
     <br><br>
 
 
     <!-- First Name -->
 
-    <label for="firstName" class="text-8xl"> First Name: </label>
-    <button
-      class="ml-96 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-      onclick="toggleExpandedContent('expandedContent3')">
-      Learn More
-    </button>
-    </div>
+
+    <div class="flex items-center">
+      <button
+        class="mr-7 ml-6 py-2 px-4 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600 w-44 h-32"
+        onclick="toggleExpandedContent('expandedContent3')">
+        Learn More
+      </button>
+
+
+      <label for="firstName" class="text-7xl mr-28"> First <br>Name: </label>
+
+      <input type="text" id="firstName" name="firstName"
+        class="text-8xl border-8 border-black  py-1 px-3 font-normal wi" />
+
     </div>
     <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent3">
       <p>
@@ -585,169 +200,240 @@ Subhan Nadeem  A00469690 -->
         tips, and additional resources.
       </p>
     </div>
-    <br />
-    <input type="text" id="middleName" name="middleName"
-      class="text-8xl border-8 border-black ml-2 py-2 px-3 font-normal wi" /><br><br>
+    </div>
+    <br><br>
 
 
     <!-- Date of Birth -->
 
-    <label for="dob" class="text-8xl mr-36">Date of birth: </label>
-    <button
-      class="ml-40 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-      onclick="toggleExpandedContent('expandedContent4')">
-      Learn More
-    </button>
+    <div class="flex items-center">
+
+      <button
+        class="mr-7 ml-6 py-2 px-4 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600 w-44   h-32"
+        onclick="toggleExpandedContent('expandedContent4')">
+        Learn More
+      </button>
+
+
+      <label for="dob" class="text-7xl mr-1">Date of <br> birth: </label>
+
+      <input type="date" id="dob" name="dob" required
+      class="text-8xl border-8 border-black ml-20 py-5 px-3 font-normal wi" />
+
     </div>
-    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent4" <p>
-      This is the additional information you'll see when you click on the
-      "Learn More" button. It can include detailed descriptions, helpful
-      tips, and additional resources.
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent4">
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
       </p>
     </div>
-    <br />
-    <input type="date" id="dob" name="dob" required
-      class="text-8xl border-8 border-black ml-2 py-2 px-3 wi font-normal" /><br /><br />
+    <br /><br />
+
+
+
 
 
 
     <!-- Date of Death -->
-    <div class="inline-container">
-      <label for="dod" class="text-8xl mr-36">Date of death: </label>
-      <button class="learn-more-btn" id="dodB" onclick="toggleExpandedContent('expandedContent5')">
-        Learn More
-      </button>
-    </div>
-    <div class="expanded-content" id="expandedContent5">
-      <p>
-        This is the additional information you'll see when you click on the
-        "Learn More" button. It can include detailed descriptions, helpful
-        tips, and additional resources.
-      </p>
-    </div>
-    <br /><br />
-    <input type="date" id="dod" name="dod" required class="inputbox" /><br /><br />
-    <!-- Place of Death -->
-    <div class="inline-container">
-      <label for="place" style="font-size: 2.7em">Place of Death:</label>
-      <button class="learn-more-btn" id="podB" onclick="toggleExpandedContent('expandedContent6')">
-        Learn More
-      </button>
-    </div>
-    <div class="expanded-content" id="expandedContent6">
-      <p>
-        This is the additional information you'll see when you click on the
-        "Learn More" button. It can include detailed descriptions, helpful
-        tips, and additional resources.
-      </p>
-    </div>
-    <br /><br />
-    <input type="text" id="place" name="place" size="40" required class="text-8xl border-8 border-black ml-2 py-2 px-3 wi\>
-        <!-- Date of Birth -->
-        <div class=" inline-container">
-    <label for="phone" class="p-info">Phone Number: </label>
-    <button class="learn-more-btn" id="phoneB" onclick="toggleExpandedContent('expandedContent7')">
-      Learn More
-    </button>
-    </div>
-    <div class="expanded-content" id="expandedContent7">
-      <p>
-        This is the additional information you'll see when you click on the
-        "Learn More" button. It can include detailed descriptions, helpful
-        tips, and additional resources.
-      </p>
-    </div>
-    <br /><br />
-    <input type="tel" class="inputbox" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-      placeholder="123-456-7890" required oninput="autoHyphen(this)" />
+    <div class="flex items-center">
 
-    <br /><br />
+      <button
+        class="mr-7 ml-6 py-2 px-4 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600 w-44 h-32"
+        id="dodB" onclick="toggleExpandedContent('expandedContent5')">
+        Learn More
+      </button>
+
+      <label for="dod" class="text-7xl mr-14">
+
+        Date of <br> death:
+
+      </label>
+
+      <input type="date" id="dod" name="dod" class="text-8xl border-8 border-black ml-7 py-5 px-3  font-normal wi"
+        required class="inputbox" />
+
+
+    </div>
+
+
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent5">
+
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+
+    </div>
+
+
+
+    </div>
+    <br><br>
+
+    <!-- Place of Death -->
+
+
+    <div class="flex items-center">
+
+
+      <button
+        class="mr-7 ml-6 py-2 px-4 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600 w-44   h-32"
+        id="podB" onclick="toggleExpandedContent('expandedContent6')">
+        Learn More
+      </button>
+
+
+      <label for="place" class="text-7xl mr-3">
+
+        Place of <br> Death:
+
+      </label>
+
+      <input type="text" id="place" name="place"
+        class="text-8xl border-8 border-black ml-0 py-1 px-3 ml-36 font-normal wi" required class="inputbox" />
+
+
+    </div>
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent6">
+
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+
+    </div>
+
+
+
+
+    </div>
+
+
+    <br><br>
+
+
+    <!-- Date of Birth -->
+
+
+    <div class="flex items-center">
+
+
+      <button
+        class="mr-7 ml-6 py-2 px-4 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600 w-44   h-32"
+        id="phoneB" onclick="toggleExpandedContent('expandedContent7')">
+        Learn More
+      </button>
+
+
+      <label for="phone" class="text-7xl mr-">Phone <br>Number: </label>
+
+      <input type="tel" class="text-8xl border-8 border-black ml-32 py-1 px-3  font-normal wi" id="phone" name="phone"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required oninput="autoHyphen(this)" />
+
+    </div>
+
+
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent7">
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+    </div>
+
+    <br><br><br><br>
+
 
     <!-- Subscription Plan 1 -->
-    <div id="plan1" class="subscription-plan">
-      <h2>Basic Subscription</h2>
-      <!-- Placeholder tags -->
-      <p class="text">Services offered under Basic subscription:</p>
-      <ul class="text">
-        <!-- Basic Plot section -->
-        <li>
-          Basic Plot.
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/BPlot.jpg"
-              alt="Basic Plot Image" />
-          </div>
+    <div id="plan1" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Basic Subscription</h2>
+      <p class="text-xl text-gray-700 mb-8 text-left">Services offered under Bsic Subscription:</p>
+      <ul class="space-y-6">
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BPlot.jpg"
+            alt="Basic Plot Image" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">Basic plot of 6x6</p>
         </li>
-        <!-- Basic Shroud section -->
-        <li>
-          Basic Shroud
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/BShroud.jpeg"
-              alt="Basic Shroud" />
-          </div>
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BShroud.jpeg"
+            alt="Basic Shroud" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">Basic Shroud</p>
         </li>
-        <!-- Basic Stones section -->
-        <li>
-          Basic Stones
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/BStones.jpeg"
-              alt="BasicStones" />
-          </div>
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/BStones.jpeg"
+            alt="Basic Stones" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">Basic Stones</p>
         </li>
       </ul>
     </div>
 
+
+
+
+
     <!-- Subscription Plan 2 -->
-    <div id="plan2" class="subscription-plan">
-      <h2>Standard Subscription</h2>
-      <!-- Placeholder tags -->
-      <p class="text">Services offered under Standard subscription:</p>
-      <ul class="text">
-        <!-- Standard Plot section -->
-        <li>
-          Standard Plot.
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/SPlot.jpg"
-              alt="Standard Plot Image" />
-          </div>
+    <div id="plan2" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+
+
+      <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">
+
+
+        Standard Subscription
+
+      </h2>
+      <p class="text-xl text-gray-700 mb-8 text-left">
+
+
+        Services offered under Standard subscription:
+
+      </p>
+      
+      <ul class="space-y-6">
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/SPlot.jpg"
+            alt="Standard Plot Image" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">Standard Plot</p>
         </li>
-        <!-- Standard Casket section -->
-        <li>
-          Standard Casket
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/SCasket.jpg"
-              alt="StandardCasket" />
-          </div>
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/SCasket.jpg"
+            alt="Standard Casket" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">Standard Casket</p>
         </li>
-        <!-- Premium Tombstone section -->
-        <li>
-          Premium Tombstone
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/STombstone.jpg"
-              alt="PremiumTombstone" />
-          </div>
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/STombstone.jpg"
+            alt="Premium Tombstone" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">Premium Tombstone</p>
         </li>
-        <!-- Decorations for tombstone section -->
         <li>
-          Decorations for tombstone (Maximum 2):
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/Decorations.jpg"
+          <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Decorations for tombstone (Maximum 2):</p>
+          <div class="flex items-center space-x-6">
+            <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/Decorations.jpg"
               alt="Decorations" />
-            <!-- Image for decoration -->
-            <div class="radio-options">
-              <input type="checkbox" id="decorationOption1" name="decoration[]"
-                value="Biodegradable Plaque for Standard" />
-              <label for="decorationOption1">Biodegradable Plaques</label><br />
-
-              <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Standard" />
-              <label for="decorationOption2">Ceramic Markers</label><br />
-
-              <input type="checkbox" id="decorationOption3" name="decoration[]"
-                value="Handmade Memorials for Standard" />
-              <label for="decorationOption3">Handmade Memorials</label><br />
-
-              <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Standard"
-                width="800em" height="500em" />
-              <label for="decorationOption4">Wildflower Seeds</label><br />
+            <div class="flex flex-col space-y-2">
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption1" name="decoration[]"
+                  value="Biodegradable Plaque for Standard" class="h-6 w-6" />
+                <label for="decorationOption1" class="ml-2 text-xl font-medium text-gray-900">Biodegradable
+                  Plaques</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Standard"
+                  class="h-6 w-6" />
+                <label for="decorationOption2" class="ml-2 text-xl font-medium text-gray-900">Ceramic Markers</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption3" name="decoration[]"
+                  value="Handmade Memorials for Standard" class="h-6 w-6" />
+                <label for="decorationOption3" class="ml-2 text-xl font-medium text-gray-900">Handmade Memorials</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Standard"
+                  class="h-6 w-6" />
+                <label for="decorationOption4" class="ml-2 text-xl font-medium text-gray-900">Wildflower Seeds</label>
+              </div>
             </div>
           </div>
         </li>
@@ -755,87 +441,102 @@ Subhan Nadeem  A00469690 -->
     </div>
 
     <!-- Subscription Plan 3 -->
-    <div id="plan3" class="subscription-plan">
-      <h2>Premium Subscription</h2>
-      <!-- Placeholder tags -->
-      <p class="text">Services offered under premium subscription:</p>
-      <ul class="text">
-        <!-- Tombstone section -->
-        <li>
-          Premium Tombstone.
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/PTombstone1.jpg"
-              alt="Tombstone Image" />
-          </div>
+    <div id="plan3" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Premium Subscription</h2>
+      <p class="text-xl text-gray-700 mb-8 text-left">Services offered under premium subscription:</p>
+      <ul class="space-y-6">
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/PTombstone1.jpg" alt="Tombstone Image" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">Premium Tombstone</p>
         </li>
-        <!-- GPS section -->
-        <li>
-          G.P.S accessible
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/GPS.jpeg"
-              alt="GPSScreenShot" />
-          </div>
+        <li class="flex items-center space-x-6">
+          <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/GPS.jpeg" alt="GPSScreenShot" />
+          <p class="text-3xl font-semibold text-gray-900 text-left">G.P.S Accessible</p>
         </li>
-        <!-- Casket options section -->
         <li>
-          Different options for caskets:
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/PCasket.jpg"
-              alt="CasketImage" />
-            <!-- Image for casket -->
-            <div class="radio-options">
-              <input type="radio" id="casketOption1" name="casket" value="Recycled Cardboard for Premium" />
-              <label for="casketOption1">Recycled Cardboard</label><br />
-
-              <input type="radio" id="casketOption2" name="casket" value="Willow for Premium" />
-              <label for="casketOption2">Willow</label><br />
-
-              <input type="radio" id="casketOption3" name="casket" value="Seagrass Casket for Premium" />
-              <label for="casketOption3">Seagrass Casket</label><br />
-
-              <input type="radio" id="casketOption4" name="casket" value="Woven Casket for Premium" />
-              <label for="casketOption4">Woven Casket</label><br />
+          <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Different options for caskets:</p>
+          <div class="flex flex-wrap items-center space-x-6">
+            <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/PCasket.jpg" alt="CasketImage" />
+            <div class="flex flex-col space-y-2">
+              <div class="flex items-center">
+                <input type="radio" id="casketOption1" name="casket" value="Recycled Cardboard for Premium" class="h-6 w-6" />
+                <label for="casketOption1" class="ml-2 text-xl font-medium text-gray-900">Recycled Cardboard</label>
+              </div>
+              <div class="flex items-center">
+                <input type="radio" id="casketOption2" name="casket" value="Willow for Premium" class="h-6 w-6" />
+                <label for="casketOption2" class="ml-2 text-xl font-medium text-gray-900">Willow</label>
+              </div>
+              <div class="flex items-center">
+                <input type="radio" id="casketOption3" name="casket" value="Seagrass Casket for Premium" class="h-6 w-6" />
+                <label for="casketOption3" class="ml-2 text-xl font-medium text-gray-900">Seagrass Casket</label>
+              </div>
+              <div class="flex items-center">
+                <input type="radio" id="casketOption4" name="casket" value="Woven Casket for Premium" class="h-6 w-6" />
+                <label for="casketOption4" class="ml-2 text-xl font-medium text-gray-900">Woven Casket</label>
+              </div>
             </div>
           </div>
         </li>
-        <!-- Decoration options section -->
         <li>
-          Custom Decorations for tombstone:
-          <div class="image-container">
-            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/Decorations.jpg"
-              alt="DecorationImage" />
-            <!-- Image for decoration -->
-            <div class="checkbox-options">
-              <input type="checkbox" id="decorationOption1" name="decoration[]"
-                value="Biodegradable Plaques for Premium" />
-              <label for="decorationOption1">Biodegradable Plaques</label><br />
-
-              <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Premium" />
-              <label for="decorationOption2">Ceramic Markers</label><br />
-
-              <input type="checkbox" id="decorationOption3" name="decoration[]"
-                value="Handmade Memorials for Premium" />
-              <label for="decorationOption3">Handmade Memorials</label><br />
-
-              <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Premium" />
-              <label for="decorationOption4">Wildflower Seeds</label><br />
+          <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Custom Decorations for tombstone:</p>
+          <div class="flex flex-wrap items-center space-x-6">
+            <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="/Pictures/Decorations.jpg" alt="DecorationImage" />
+            <div class="flex flex-col space-y-2">
+              <!-- Decoration options with added class 'decoration-checkbox' -->
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption1" name="decoration[]" value="Biodegradable Plaques for Premium" class="h-6 w-6 decoration-checkbox" />
+                <label for="decorationOption1" class="ml-2 text-xl font-medium text-gray-900">Biodegradable Plaques</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Premium" class="h-6 w-6 decoration-checkbox" />
+                <label for="decorationOption2" class="ml-2 text-xl font-medium text-gray-900">Ceramic Markers</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption3" name="decoration[]" value="Handmade Memorials for Premium" class="h-6 w-6 decoration-checkbox" />
+                <label for="decorationOption3" class="ml-2 text-xl font-medium text-gray-900">Handmade Memorials</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Premium" class="h-6 w-6 decoration-checkbox" />
+                <label for="decorationOption4" class="ml-2 text-xl font-medium text-gray-900">Wildflower Seeds</label>
+              </div>
             </div>
           </div>
         </li>
+        <button class="submit bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded text-4xl" onclick="submitForm()">Submit Form</button>
+
+        
+
       </ul>
     </div>
+    
   </form>
-  <button class="submit" onclick="submitForm()">Submit Form</button>
-  <!-- Back to the Top button -->
-  <button onclick="scrollToTop()" class="back-to-top">Back to the Top</button>
+  <body>
+    
+
+
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-gray-500 text-white p-2.5 rounded cursor-pointer z-50" onclick="scrollToTop()">
+    Back to the top</button>
+
+
 </body>
 
-<footer>
-  <!-- Footer -->
-  <!--Added green color to get an idea of the height and width of footer-->
-  <div class="footer">
-    <p>&copy; Natural Burial</p>
+<footer class="bg-green-500">
+  <div class="container mx-auto py-4 text-center text-white">
+    <p>© 2024 Natural Burial. All rights reserved.</p>
+    <p>Contact us at info@naturalburial.com</p>
+    <div class="flex justify-center mt-2">
+      <a href="#" class="mx-2">Home</a>
+      <a href="#" class="mx-2">About</a>
+      <a href="#" class="mx-2">Services</a>
+      <a href="#" class="mx-2">Contact</a>
+    </div>
+    <div class="flex justify-center mt-2">
+      <a href="#" class="mx-2">Facebook</a>
+      <a href="#" class="mx-2">Twitter</a>
+      <a href="#" class="mx-2">Instagram</a>
+    </div>
   </div>
-</footer>
+  
+
 
 </html>
