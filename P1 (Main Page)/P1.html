@@ -7,160 +7,169 @@ Subhan Nadeem  A00469690 -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natural Burial Plans</title>
 
-    <!-- Purpose: Styles for home page -->
-    <link rel="stylesheet" href="/P1 (Main Page)/home.css" />
-    <!-- FILE HEADER -->
-    <!-- Purpose: JavaScript for home page -->
-    <script src="home.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.config.js"></script>
-    
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let timeout;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natural Burial Plans</title>
 
-        // Function to speak the text using Web Speech API
-        function speak(text) {
-          const synth = window.speechSynthesis;
-          const utterance = new SpeechSynthesisUtterance(text);
+  <!-- Purpose: Styles for home page -->
+  <link rel="stylesheet" href="/P1 (Main Page)/home.css" />
+  <!-- FILE HEADER -->
+  <!-- Purpose: JavaScript for home page -->
+  <script src="home.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.config.js"></script>
 
+<<<<<<< Updated upstream
           // Find a female voice if available
           const femaleVoice = synth
             .getVoices()
             .find((voice) => voice.name.includes("Xiaoyi"));
+=======
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let timeout;
+>>>>>>> Stashed changes
 
-          // If a female voice is found, use it; otherwise, use the default voice
-          utterance.voice = femaleVoice;
+      // Function to speak the text using Web Speech API
+      function speak(text) {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance(text);
 
-          utterance.pitch = 2; // Adjust pitch (0 to 2)
-          utterance.rate = 1; // Adjust rate (0.1 to 10)
+        // Find a female voice if available
+        const femaleVoice = synth
+          .getVoices()
+          .find((voice) => voice.name.includes("Susan"));
 
-          synth.speak(utterance);
-        }
+        // If a female voice is found, use it; otherwise, use the default voice
+        utterance.voice = femaleVoice;
 
-        // Function to handle mouseover events and trigger speech after 2 seconds
-        function handleMouseoverEvent(elementSelector) {
-          const elements = document.querySelectorAll(elementSelector);
+        utterance.pitch = 2; // Adjust pitch (0 to 2)
+        utterance.rate = 1; // Adjust rate (0.1 to 10)
 
-          elements.forEach((element) => {
-            element.addEventListener("mouseover", function () {
-              timeout = setTimeout(() => {
-                speak(this.textContent);
-              }, 2000);
-            });
+        synth.speak(utterance);
+      }
 
-            element.addEventListener("mouseout", function () {
-              clearTimeout(timeout);
-            });
+      // Function to handle mouseover events and trigger speech after 2 seconds
+      function handleMouseoverEvent(elementSelector) {
+        const elements = document.querySelectorAll(elementSelector);
+
+        elements.forEach((element) => {
+          element.addEventListener("mouseover", function () {
+            timeout = setTimeout(() => {
+              speak(this.textContent);
+            }, 2000);
           });
-        }
 
-        // Call the function to handle mouseover events for specific elements
-        handleMouseoverEvent("h1, label, p, .box, footer p,li,radio,button,input");
-      });
-      window.speechSynthesis.onvoiceschanged = function () {
-        var voices = window.speechSynthesis.getVoices();
-        console.log(voices);
-      };
-    </script>
-  </head>
-  <body onload="retrieving()">
-    <!-- Major sections -->
-    <!-- Header -->
-    <div class="flex bg-green-500 text-white h-48 items-center">
-      <img
-        src="/P1 (Main Page)/Logo.jpg"
-        alt="logo"
-        class="mt-2 ml-8 h-36 w-36"
-      />
-      <div class="ml-44 text-center">
-        <p class="text-8xl font-semibold">Natural Burial</p>
-        <hr class="my-2 border-t-2 border-white" />
-        <p class="text-5xl text-white font-semibold">
-          "Your final footprint on the Earth."
-        </p>
-      </div>
+          element.addEventListener("mouseout", function () {
+            clearTimeout(timeout);
+          });
+        });
+      }
+
+      // Call the function to handle mouseover events for specific elements
+      handleMouseoverEvent("h1, label, p, .box, footer p,li,radio,button,input");
+    });
+    window.speechSynthesis.onvoiceschanged = function () {
+      var voices = window.speechSynthesis.getVoices();
+      console.log(voices);
+    };
+  </script>
+</head>
+
+<body onload="retrieving()">
+  <!-- Major sections -->
+  <!-- Header -->
+  <div class="flex bg-green-500 text-white h-48 items-center">
+    <img src="/P1 (Main Page)/Logo.jpg" alt="logo" class="mt-2 ml-8 h-36 w-36" />
+    <div class="ml-44 text-center">
+      <p class="text-8xl font-semibold">Natural Burial</p>
+      <hr class="my-2 border-t-2 border-white" />
+      <p class="text-5xl text-white font-semibold">
+        "Your final footprint on the Earth."
+      </p>
     </div>
+  </div>
 
-    <!-- Theme Toggle Button -->
-    <button
-      class="theme-toggle bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300 ease-in-out"
-      onclick="darkMode()"
-    >
-      Toggle Theme
-    </button>
-    <!-- Heading -->
-    <div class="font-bold text-5xl my-4">
-      <h1>Choose your plan</h1>
-    </div>
-
-    <!--- Buttons ---->
-    <div class="space-y-4">
-      <button
-        onclick="scrollToSubscription('plan1')"
-        class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom"
-      >
-        <h2 class="text-3xl">Basic Subscription: $2,500</h2>
-        <p>Click here to view the subscription plan</p>
-      </button>
-      <br /><br />
-      <button
-        onclick="scrollToSubscription('plan2')"
-        class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom"
-      >
-        <h2 class="text-3xl">Standard Subscription: $5,000</h2>
-        <p>Click here to view the subscription plan</p>
-      </button>
-      <br /><br />
-      <button
-        onclick="scrollToSubscription('plan3')"
-        class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom"
-      >
-        <h2 class="text-3xl">Premium Subscription: $10,000</h2>
-        <p>Click here to view the subscription plan</p>
-      </button>
-    </div>
-<br>
-    <div style="padding: 0.1em">
-      <h1 style="font-size: 2.5em">
-        Personal Info of deceased: according to the act of birth
-      </h1>
-    </div>
-    <br>
-    <form>
-
-
-  <!-- Last Name -->
-  <label for="surname" class="text-8xl mr-2">Last Name: </label>
-  <button class="ml-96 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onclick="toggleExpandedContent('expandedContent1')">
-    Learn More
+  <!-- Theme Toggle Button -->
+  <button
+    class="theme-toggle bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300 ease-in-out"
+    onclick="darkMode()">
+    Toggle Theme
   </button>
+  <!-- Heading -->
+  <div class="font-bold text-5xl my-4">
+    <h1>Choose your plan</h1>
+  </div>
 
-<div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent1">
-  <p>
-    This is the additional information you'll see when you click on the
-    "Learn More" button. It can include detailed descriptions, helpful
-    tips, and additional resources.
-  </p>
-</div>
-<br>
-<input type="text" id="surname" name="surname" class="text-8xl border-8 border-black py-2 px-3 font-normal ml-2" required />
-</div>
-<br /><br />
+  <!--- Buttons ---->
+  <div class="space-y-4">
+    <button onclick="scrollToSubscription('plan1')"
+      class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom">
+      <h2 class="text-3xl">Basic Subscription: $2,500</h2>
+      <p>Click here to view the subscription plan</p>
+    </button>
+    <br /><br />
+    <button onclick="scrollToSubscription('plan2')"
+      class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom">
+      <h2 class="text-3xl">Standard Subscription: $5,000</h2>
+      <p>Click here to view the subscription plan</p>
+    </button>
+    <br /><br />
+    <button onclick="scrollToSubscription('plan3')"
+      class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-10 px-10 ml-2 rounded-lg w-custom">
+      <h2 class="text-3xl">Premium Subscription: $10,000</h2>
+      <p>Click here to view the subscription plan</p>
+    </button>
+  </div>
+  <br>
+  <div style="padding: 0.1em">
+    <h1 style="font-size: 2.5em">
+      Personal Info of deceased: according to the act of birth
+    </h1>
+  </div>
+  <br>
+  <form>
 
-      
-
-       <!-- Middle Name(s) -->
-      <label for="middleName" class="text-8xl mr-5">Middle name(s): </label>
-      
-      <button class="ml-40 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onclick="toggleExpandedContent('expandedContent2')">
+    <!---- Last Name------->
+    <div class="flex items-center">
+      <button
+        class="mr-7 ml-6 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+        onclick="toggleExpandedContent('expandedContent1')">
         Learn More
       </button>
+      <div> <label for="surname" class="text-7xl mr-14 ">Last Name: </label>
+      </div>
+
+
+
+      <input type="text" id="surname" name="surname" class="text-8xl border-8 border-black py-1 px-3 font-normal wi"
+        required />
+    </div>
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent1">
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+    </div>
+
+
+
+    <!-- Middle Name(s) -->
+    <div class="flex items-center">
+      <button
+      class="mr-7 ml-6 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+      onclick="toggleExpandedContent('expandedContent1')">
+      Learn More
+    </button>
+      <div> <label for="middleName" class="text-8xl mr-0">Middle Names:</label>
+
+      </div>
+      <div><input type="text" id="middleName" name="middleName"
+          class="text-8xl border-8 border-black mr-10 py-1 px-3 font-normal wi" /></div>
+
     </div>
     <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent2">
       <p>
@@ -170,6 +179,7 @@ Subhan Nadeem  A00469690 -->
       </p>
     </div>
     <br>
+<<<<<<< Updated upstream
     <input type="text" id="middleName" name="middleName" class="text-8xl border-8 border-black ml-2 py-2 px-3 font-normal" /><br><br> 
     
   
@@ -562,6 +572,280 @@ Subhan Nadeem  A00469690 -->
     <!--Added green color to get an idea of the height and width of footer-->
     <div class="footer">
       <p>&copy; Natural Burial</p>
+=======
+>>>>>>> Stashed changes
     </div>
-  </footer>
+    <br><br>
+
+
+    <!-- First Name -->
+
+    <label for="firstName" class="text-8xl"> First Name: </label>
+    <button
+      class="ml-96 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+      onclick="toggleExpandedContent('expandedContent3')">
+      Learn More
+    </button>
+    </div>
+    </div>
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent3">
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+    </div>
+    <br />
+    <input type="text" id="middleName" name="middleName"
+      class="text-8xl border-8 border-black ml-2 py-2 px-3 font-normal wi" /><br><br>
+
+
+    <!-- Date of Birth -->
+
+    <label for="dob" class="text-8xl mr-36">Date of birth: </label>
+    <button
+      class="ml-40 mb-4 py-6 px-8 bg-gray-500 text-white text-4xl rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+      onclick="toggleExpandedContent('expandedContent4')">
+      Learn More
+    </button>
+    </div>
+    <div class="hidden bg-gray-100 p-5 text-3xl mt-5 rounded" id="expandedContent4" <p>
+      This is the additional information you'll see when you click on the
+      "Learn More" button. It can include detailed descriptions, helpful
+      tips, and additional resources.
+      </p>
+    </div>
+    <br />
+    <input type="date" id="dob" name="dob" required
+      class="text-8xl border-8 border-black ml-2 py-2 px-3 wi font-normal" /><br /><br />
+
+
+
+    <!-- Date of Death -->
+    <div class="inline-container">
+      <label for="dod" class="text-8xl mr-36">Date of death: </label>
+      <button class="learn-more-btn" id="dodB" onclick="toggleExpandedContent('expandedContent5')">
+        Learn More
+      </button>
+    </div>
+    <div class="expanded-content" id="expandedContent5">
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+    </div>
+    <br /><br />
+    <input type="date" id="dod" name="dod" required class="inputbox" /><br /><br />
+    <!-- Place of Death -->
+    <div class="inline-container">
+      <label for="place" style="font-size: 2.7em">Place of Death:</label>
+      <button class="learn-more-btn" id="podB" onclick="toggleExpandedContent('expandedContent6')">
+        Learn More
+      </button>
+    </div>
+    <div class="expanded-content" id="expandedContent6">
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+    </div>
+    <br /><br />
+    <input type="text" id="place" name="place" size="40" required class="text-8xl border-8 border-black ml-2 py-2 px-3 wi\>
+        <!-- Date of Birth -->
+        <div class=" inline-container">
+    <label for="phone" class="p-info">Phone Number: </label>
+    <button class="learn-more-btn" id="phoneB" onclick="toggleExpandedContent('expandedContent7')">
+      Learn More
+    </button>
+    </div>
+    <div class="expanded-content" id="expandedContent7">
+      <p>
+        This is the additional information you'll see when you click on the
+        "Learn More" button. It can include detailed descriptions, helpful
+        tips, and additional resources.
+      </p>
+    </div>
+    <br /><br />
+    <input type="tel" class="inputbox" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      placeholder="123-456-7890" required oninput="autoHyphen(this)" />
+
+    <br /><br />
+
+    <!-- Subscription Plan 1 -->
+    <div id="plan1" class="subscription-plan">
+      <h2>Basic Subscription</h2>
+      <!-- Placeholder tags -->
+      <p class="text">Services offered under Basic subscription:</p>
+      <ul class="text">
+        <!-- Basic Plot section -->
+        <li>
+          Basic Plot.
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/BPlot.jpg"
+              alt="Basic Plot Image" />
+          </div>
+        </li>
+        <!-- Basic Shroud section -->
+        <li>
+          Basic Shroud
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/BShroud.jpeg"
+              alt="Basic Shroud" />
+          </div>
+        </li>
+        <!-- Basic Stones section -->
+        <li>
+          Basic Stones
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/BStones.jpeg"
+              alt="BasicStones" />
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Subscription Plan 2 -->
+    <div id="plan2" class="subscription-plan">
+      <h2>Standard Subscription</h2>
+      <!-- Placeholder tags -->
+      <p class="text">Services offered under Standard subscription:</p>
+      <ul class="text">
+        <!-- Standard Plot section -->
+        <li>
+          Standard Plot.
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/SPlot.jpg"
+              alt="Standard Plot Image" />
+          </div>
+        </li>
+        <!-- Standard Casket section -->
+        <li>
+          Standard Casket
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/SCasket.jpg"
+              alt="StandardCasket" />
+          </div>
+        </li>
+        <!-- Premium Tombstone section -->
+        <li>
+          Premium Tombstone
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/STombstone.jpg"
+              alt="PremiumTombstone" />
+          </div>
+        </li>
+        <!-- Decorations for tombstone section -->
+        <li>
+          Decorations for tombstone (Maximum 2):
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/Decorations.jpg"
+              alt="Decorations" />
+            <!-- Image for decoration -->
+            <div class="radio-options">
+              <input type="checkbox" id="decorationOption1" name="decoration[]"
+                value="Biodegradable Plaque for Standard" />
+              <label for="decorationOption1">Biodegradable Plaques</label><br />
+
+              <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Standard" />
+              <label for="decorationOption2">Ceramic Markers</label><br />
+
+              <input type="checkbox" id="decorationOption3" name="decoration[]"
+                value="Handmade Memorials for Standard" />
+              <label for="decorationOption3">Handmade Memorials</label><br />
+
+              <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Standard"
+                width="800em" height="500em" />
+              <label for="decorationOption4">Wildflower Seeds</label><br />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Subscription Plan 3 -->
+    <div id="plan3" class="subscription-plan">
+      <h2>Premium Subscription</h2>
+      <!-- Placeholder tags -->
+      <p class="text">Services offered under premium subscription:</p>
+      <ul class="text">
+        <!-- Tombstone section -->
+        <li>
+          Premium Tombstone.
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/PTombstone1.jpg"
+              alt="Tombstone Image" />
+          </div>
+        </li>
+        <!-- GPS section -->
+        <li>
+          G.P.S accessible
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/GPS.jpeg"
+              alt="GPSScreenShot" />
+          </div>
+        </li>
+        <!-- Casket options section -->
+        <li>
+          Different options for caskets:
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/PCasket.jpg"
+              alt="CasketImage" />
+            <!-- Image for casket -->
+            <div class="radio-options">
+              <input type="radio" id="casketOption1" name="casket" value="Recycled Cardboard for Premium" />
+              <label for="casketOption1">Recycled Cardboard</label><br />
+
+              <input type="radio" id="casketOption2" name="casket" value="Willow for Premium" />
+              <label for="casketOption2">Willow</label><br />
+
+              <input type="radio" id="casketOption3" name="casket" value="Seagrass Casket for Premium" />
+              <label for="casketOption3">Seagrass Casket</label><br />
+
+              <input type="radio" id="casketOption4" name="casket" value="Woven Casket for Premium" />
+              <label for="casketOption4">Woven Casket</label><br />
+            </div>
+          </div>
+        </li>
+        <!-- Decoration options section -->
+        <li>
+          Custom Decorations for tombstone:
+          <div class="image-container">
+            <img class="block h-64 border-solid border-8 rounded-full border-red-900" src="/Pictures/Decorations.jpg"
+              alt="DecorationImage" />
+            <!-- Image for decoration -->
+            <div class="checkbox-options">
+              <input type="checkbox" id="decorationOption1" name="decoration[]"
+                value="Biodegradable Plaques for Premium" />
+              <label for="decorationOption1">Biodegradable Plaques</label><br />
+
+              <input type="checkbox" id="decorationOption2" name="decoration[]" value="Ceramic Markers for Premium" />
+              <label for="decorationOption2">Ceramic Markers</label><br />
+
+              <input type="checkbox" id="decorationOption3" name="decoration[]"
+                value="Handmade Memorials for Premium" />
+              <label for="decorationOption3">Handmade Memorials</label><br />
+
+              <input type="checkbox" id="decorationOption4" name="decoration[]" value="Wildflower Seeds for Premium" />
+              <label for="decorationOption4">Wildflower Seeds</label><br />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </form>
+  <button class="submit" onclick="submitForm()">Submit Form</button>
+  <!-- Back to the Top button -->
+  <button onclick="scrollToTop()" class="back-to-top">Back to the Top</button>
+</body>
+
+<footer>
+  <!-- Footer -->
+  <!--Added green color to get an idea of the height and width of footer-->
+  <div class="footer">
+    <p>&copy; Natural Burial</p>
+  </div>
+</footer>
+
 </html>
