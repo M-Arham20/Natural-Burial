@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+<<<<<<< Updated upstream
 });
 /* 
    The purpose of this file is to define the function to toggle dark mode.
@@ -183,3 +184,24 @@ function toggleDarkMode() {
     evenIsDarkMode++;
 }
 
+=======
+
+    // Initialize the theme based on user's preference or default to 'light'
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    // Listen for a click on the button
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      // Toggle the .dark class on each click
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark')
+        localStorage.theme = 'light'
+      } else {
+        document.documentElement.classList.add('dark')
+        localStorage.theme = 'dark'
+      }
+    })
+>>>>>>> Stashed changes
