@@ -1,15 +1,11 @@
-
+body {
+  background-color: antiquewhite;
+}
 
 .w-custom {
-  width: 35em;
+  width: 40em;
 }
-.wi{
+.wi {
   width: 8em;
   height: auto;
 }
-
-
-
-
-
-  

@@ -83,6 +83,12 @@ function submitForm() {
   document.getElementById("dod").value = "";
   document.getElementById("place").value = "";
   document.getElementById("phone").value = "";
+  var radioButtons = document.querySelectorAll(
+    'input[name="subscriptionPlan"]'
+  );
+  radioButtons.forEach(function (radio) {
+    radio.checked = false;
+  });
 }
 function retrieving() {
   let retrievedData;
@@ -135,17 +141,45 @@ function autoHyphen(input) {
   input.value = phoneNumber;
 }
 
-  //fuction for changing the colors
-  document.addEventListener('DOMContentLoaded', function() {
-    const radioButtons = document.querySelectorAll('input[name="subscriptionPlan"]');
-    radioButtons.forEach(radio => {
-      radio.addEventListener('change', function() {
-        document.querySelectorAll('#plan1, #plan2, #plan3').forEach(div => {
-          div.classList.remove('bg-gray-300'); // Remove the color from all plans
-        });
-        if (this.checked) {
-          document.querySelector(`label[for="${this.id}"]`).closest('.shadow-lg').classList.add('bg-gray-300'); // Add color to the selected plan
-        }
+//fuction for changing the colors
+document.addEventListener("DOMContentLoaded", function () {
+  const radioButtons = document.querySelectorAll(
+    'input[name="subscriptionPlan"]'
+  );
+  radioButtons.forEach((radio) => {
+    radio.addEventListener("change", function () {
+      document.querySelectorAll("#plan1, #plan2, #plan3").forEach((div) => {
+        div.classList.remove("bg-gray-300"); // Remove the color from all plans
       });
+      if (this.checked) {
+        document
+          .querySelector(`label[for="${this.id}"]`)
+          .closest(".shadow-lg")
+          .classList.add("bg-gray-300"); // Add color to the selected plan
+      }
     });
   });
+});
+/* 
+   The purpose of this file is to define the function to toggle dark mode.
+
+   Author: Terry
+*/
+
+let evenIsDarkMode = 0; // used to indicate whether the current display state
+                        // is dark mode (even) or light mode (odd)
+                        // Special note: the value of this variable is persistent
+                        //               because it has global scope
+
+function toggleDarkMode() {
+    // test whether evenIsDarkMode is an even or odd number
+    if (evenIsDarkMode % 2 == 0){
+        document.getElementById("main").classList.remove('dark');
+    } else {
+        document.getElementById("main").classList.add('dark');
+    }
+    // increment evenIsDarkMode so its even or odd value is synchronized with
+    // the current display state
+    evenIsDarkMode++;
+}
+
