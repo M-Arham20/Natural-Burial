@@ -32,63 +32,85 @@ window.onscroll = function () {
 // Function to handle form submission
 function submitForm() {
   // Gather input field values
-  var surname = document.getElementById("surname").value;
-  var middleName = document.getElementById("middleName").value;
-  var firstName = document.getElementById("firstName").value;
-  var dob = document.getElementById("dob").value;
-  var dod = document.getElementById("dod").value;
-  var place = document.getElementById("place").value;
-  var phone = document.getElementById("phone").value;
+  // Function to handle form submission
+  function submitForm() {
+    // Gather input field values
+    var surname = document.getElementById("surname").value;
+    var middleName = document.getElementById("middleName").value;
+    var firstName = document.getElementById("firstName").value;
+    var dob = document.getElementById("dob").value;
+    var dod = document.getElementById("dod").value;
+    var place = document.getElementById("place").value;
+    var phone = document.getElementById("phone").value;
 
-  // Gather selected decoration options
-  var decorations = [];
-  var decorationOptions = document.getElementsByName("decoration[]");
-  decorationOptions.forEach(function (option) {
-    if (option.checked) {
-      decorations.push(option.value);
+    // Gather selected decoration options
+    var decorations = [];
+    var decorationOptions = document.getElementsByName("decoration[]");
+    decorationOptions.forEach(function (option) {
+      if (option.checked) {
+        decorations.push(option.value);
+      }
+    });
+
+    // Gather selected subscription plan
+    var subscriptionPlan = "";
+    var subscriptionPlanOptions = document.querySelectorAll(
+      'input[name="subscriptionPlan"]:checked'
+    );
+    if (subscriptionPlanOptions.length > 0) {
+      subscriptionPlan = subscriptionPlanOptions[0].value;
     }
-  });
 
-  var casket = "";
-  var casketOptions = document.getElementsByName("casket");
-  casketOptions.forEach(function (option) {
-    if (option.checked) {
-      casket = option.value;
+    var casket = "";
+    var casketOptions = document.getElementsByName("casket");
+    casketOptions.forEach(function (option) {
+      if (option.checked) {
+        casket = option.value;
+      }
+    });
+
+    // Create JSON object
+    var personalInfo = {
+      surname: surname,
+      middleName: middleName,
+      firstName: firstName,
+      dob: dob,
+      dod: dod,
+      place: place,
+      phone: phone,
+      decorations: decorations, // Include selected decorations
+      subscriptionPlan: subscriptionPlan, // Include selected subscription plan
+      casket: casket, // Include chosen casket type
+    };
+
+    // Store personal info in localStorage
+    if (typeof Storage !== "undefined") {
+      window.localStorage.setItem(
+        "personal_Info",
+        JSON.stringify(personalInfo)
+      );
     }
-  });
 
-  // Create JSON object
-  var personalInfo = {
-    surname: surname,
-    middleName: middleName,
-    firstName: firstName,
-    dob: dob,
-    dod: dod,
-    place: place,
-    phone: phone,
-    decorations: decorations, // Include selected decorations
-    casket: casket, // Include chosen casket type
-  };
+    // Clear selected subscription plan after storing
+    subscriptionPlanOptions.forEach(function (option) {
+      option.checked = false;
+    });
 
-  // Store personal info in localStorage
-  if (typeof Storage !== "undefined") {
-    window.localStorage.setItem("personal_Info", JSON.stringify(personalInfo));
+    // Clear radio options
+    var radioOptions = document.querySelectorAll('input[type="radio"] + label');
+    radioOptions.forEach(function (label) {
+      label.classList.remove("checked");
+    });
+
+    // Clear input fields
+    document.getElementById("surname").value = "";
+    document.getElementById("middleName").value = "";
+    document.getElementById("firstName").value = "";
+    document.getElementById("dob").value = "";
+    document.getElementById("dod").value = "";
+    document.getElementById("place").value = "";
+    document.getElementById("phone").value = "";
   }
-
-  // Clear input fields
-  document.getElementById("surname").value = "";
-  document.getElementById("middleName").value = "";
-  document.getElementById("firstName").value = "";
-  document.getElementById("dob").value = "";
-  document.getElementById("dod").value = "";
-  document.getElementById("place").value = "";
-  document.getElementById("phone").value = "";
-  var radioButtons = document.querySelectorAll(
-    'input[name="subscriptionPlan"]'
-  );
-  radioButtons.forEach(function (radio) {
-    radio.checked = false;
-  });
 }
 function retrieving() {
   let retrievedData;
@@ -161,12 +183,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
 // Function to toggle dark mode
 function toggleDarkMode() {
   const body = document.body;
-  body.classList.toggle('dark');
+  body.classList.toggle("dark");
 }
-
