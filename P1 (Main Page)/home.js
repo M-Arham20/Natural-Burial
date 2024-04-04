@@ -159,49 +159,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-<<<<<<< Updated upstream
 });
-/* 
-   The purpose of this file is to define the function to toggle dark mode.
 
-   Author: Terry
-*/
 
-let evenIsDarkMode = 0; // used to indicate whether the current display state
-                        // is dark mode (even) or light mode (odd)
-                        // Special note: the value of this variable is persistent
-                        //               because it has global scope
 
+
+// Function to toggle dark mode
 function toggleDarkMode() {
-    // test whether evenIsDarkMode is an even or odd number
-    if (evenIsDarkMode % 2 == 0){
-        document.getElementById("main").classList.remove('dark');
-    } else {
-        document.getElementById("main").classList.add('dark');
-    }
-    // increment evenIsDarkMode so its even or odd value is synchronized with
-    // the current display state
-    evenIsDarkMode++;
+  const body = document.body;
+  body.classList.toggle('dark');
 }
 
-=======
-
-    // Initialize the theme based on user's preference or default to 'light'
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-
-    // Listen for a click on the button
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-      // Toggle the .dark class on each click
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark')
-        localStorage.theme = 'light'
-      } else {
-        document.documentElement.classList.add('dark')
-        localStorage.theme = 'dark'
-      }
-    })
->>>>>>> Stashed changes

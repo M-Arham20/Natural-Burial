@@ -17,10 +17,11 @@ Subhan Nadeem  A00469690 -->
   <link rel="stylesheet" href="/P1 (Main Page)/home.css" />
   <!-- FILE HEADER -->
   <!-- Purpose: JavaScript for home page -->
-  <script src="tail.js"></script>
-
-  <script src="home.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="./tail.js"></script>
+
+  <script src="./home.js" defer></script>
 
 
   <script>
@@ -73,7 +74,7 @@ Subhan Nadeem  A00469690 -->
   </script>
 </head>
 
-<body onload="retrieving()" class="dark">
+<body onload="retrieving()" class="dark:bg-black  font-sans dark:text-white bg-pink" >
   <!-- Major sections -->
   <!-- Header -->
   <div class="flex bg-green-500 text-white h-48 items-center">
@@ -87,20 +88,23 @@ Subhan Nadeem  A00469690 -->
     </div>
   </div>
 
-<<<<<<< Updated upstream
-  <!-- The me Toggle Button -->
-  <button
-      class="m-12 h-24 px-6 font-semibold font-mono text-8xl text-blue-600 border-solid border-8 border-gray-900 dark:m-12 dark:h-24 dark:px-6 dark:font-semibold dark:font-sans dark:text-8xl dark:text-yellow-100 dark:bg-gray-900 dark:border-0"
-      onclick="toggleDarkMode()"
-    >
-      TOGGLE DISPLAY
-    </button>
-=======
+
+  
+
   <!-- Theme Toggle Button -->
-  <button id="theme-toggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition duration-500 ease-in-out">
-    Toggle Theme
+  <button class="m-12 h-24 px-6
+    font-semibold font-mono
+     bg-grey-500
+    border-solid border-8 border-gray-900
+
+    dark:m-12 dark:h-24 dark:px-6
+    
+    dark:text-black dark:bg-white
+    dark:border-0
+    
+    border-solid border-8 dark:border-yellow" onclick="toggleDarkMode()">
+    TOGGLE DISPLAY
   </button>
->>>>>>> Stashed changes
   <!-- Heading -->
   <div class="font-bold text-5xl my-4">
     <h1>Choose your plan</h1>
@@ -435,8 +439,8 @@ Subhan Nadeem  A00469690 -->
                 <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Decorations for tombstone (Maximum 2):
                 </p>
                 <div class="flex items-center space-x-6">
-                  <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900"
-                    src="Decorations.jpg" alt="Decorations" />
+                  <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="Decorations.jpg"
+                    alt="Decorations" />
                   <div class="flex flex-col space-y-2">
                     <div class="flex items-center">
                       <input type="checkbox" id="decorationOption1" name="decoration[]"
@@ -481,8 +485,8 @@ Subhan Nadeem  A00469690 -->
             <p class="text-xl text-gray-700 mb-8 text-left">Services offered under premium subscription:</p>
             <ul class="space-y-6">
               <li class="flex items-center space-x-6">
-                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900"
-                  src="PTombstone1.jpg" alt="Tombstone Image" />
+                <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="PTombstone1.jpg"
+                  alt="Tombstone Image" />
                 <p class="text-3xl font-semibold text-gray-900 text-left">Premium Tombstone</p>
               </li>
               <li class="flex items-center space-x-6">
@@ -522,8 +526,8 @@ Subhan Nadeem  A00469690 -->
               <li>
                 <p class="text-3xl font-semibold text-gray-900 text-left mb-4">Custom Decorations for tombstone:</p>
                 <div class="flex flex-wrap items-center space-x-6">
-                  <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900"
-                    src="Decorations.jpg" alt="DecorationImage" />
+                  <img class="w-64 h-64 object-cover rounded-full border-4 border-gray-900" src="Decorations.jpg"
+                    alt="DecorationImage" />
                   <div class="flex flex-col space-y-2">
                     <!-- Decoration options with added class 'decoration-checkbox' -->
                     <div class="flex items-center">
@@ -575,15 +579,9 @@ Subhan Nadeem  A00469690 -->
   " onclick="submitForm()">Submit Form</button>
 
 
-<<<<<<< Updated upstream
-    <button id="back-to-top" class="fixed bottom-5 right-5 bg-gray-500 text-white text-4xl p-2.5 rounded cursor-pointer z-50 w-66 h-24 "
-      onclick="scrollToTop()">
-      Back to the top</button>
-=======
   <button id="back-to-top" class="fixed bottom-5 right-5 bg-gray-500 text-white p-2.5 rounded cursor-pointer z-50"
     onclick="scrollToTop()">
     Back to the top</button>
->>>>>>> Stashed changes
 
 
 
