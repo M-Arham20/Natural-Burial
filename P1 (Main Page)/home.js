@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const SERVER_URL = "https://ugdev.cs.smu.ca:3000";
 
 // Function to toggle the visibility of the expanded content
@@ -69,7 +71,7 @@ function submitForm() {
   });
 
   // Create JSON object
-  var personalInfo = {
+  var data = {
     surname: surname,
     middleName: middleName,
     firstName: firstName,
@@ -84,7 +86,7 @@ function submitForm() {
 
   // Store personal info in localStorage
   if (typeof Storage !== "undefined") {
-    window.localStorage.setItem("personal_Info", JSON.stringify(personalInfo));
+    window.localStorage.setItem("personal_Info", JSON.stringify(data));
   }
 
   // Clear selected subscription plan after storing
@@ -98,8 +100,6 @@ function submitForm() {
     label.classList.remove("checked");
   });
 
-  $.post(SERVER_URL + "/myPost", personalInfo, successFn).fail(errorFn);
-
   // Clear input fields
   document.getElementById("surname").value = "";
   document.getElementById("middleName").value = "";
@@ -111,7 +111,6 @@ function submitForm() {
 }
 
 function retrieving() {
-  $.get(SERVER_URL + "/myGet", successFn).fail(errorFn);
   let retrievedData;
   if (typeof Storage !== "undefined") {
     retrievedData = JSON.parse(window.localStorage.getItem("personal_Info"));
@@ -188,4 +187,24 @@ function toggleDarkMode() {
   body.classList.toggle("dark");
 }
 
-function retrieve() {}
+document.getElementById("submit").addEventListener("click", function () {
+  const data = localStorage.getItem("personal_Info");
+
+  fetch("/upload", {
+    method: "POST",
+    body: JSON.stringify({ data }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+});
+
+document.getElementById("retrieve").addEventListener("click", function () {
+  fetch("/download")
+    .then((response) => response.json())
+    .then((data) => {
+      localStorage.setItem("personalInfo", JSON.stringify(data));
+      console.log("Data retrieved successfully:", data);
+    })
+    .catch((error) => console.error("Error retrieving data:", error));
+});

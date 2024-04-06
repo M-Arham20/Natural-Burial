@@ -2,27 +2,30 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+const PORT = 3050;
 
 app.use(bodyParser.json());
 
-// Temporary storage (you should replace this with a proper database)
-let formData = {};
+let serverData = "";
 
-app.post("/submit-form", (req, res) => {
-  const newFormData = req.body;
-
-  // Store the new form data
-  formData = newFormData;
-
-  res.status(200).json({ message: "Form submitted successfully!" });
+app.post("/upload", (req, res) => {
+  const { data } = req.body;
+  if (!data) {
+    return res.status(400).send("no data reciecved");
+  }
+  console.log(data);
+  serverData = data;
+  res.sendStatus(200);
 });
 
-app.get("/retrieve-form", (req, res) => {
-  // Respond with the stored form data
-  res.status(200).json({ formData });
+app.get("/download", (req, res) => {
+  if (serverData) {
+    res.send(serverData);
+  } else {
+    res.status(404).send("No data available for download.");
+  }
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log("Server is running on port " + PORT);
 });
