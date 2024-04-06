@@ -1,3 +1,5 @@
+const SERVER_URL = "https://ugdev.cs.smu.ca:3000";
+
 // Function to toggle the visibility of the expanded content
 function toggleExpandedContent(contentId) {
   let expandedContent = document.getElementById(contentId);
@@ -96,6 +98,8 @@ function submitForm() {
     label.classList.remove("checked");
   });
 
+  $.post(SERVER_URL + "/myPost", personalInfo, successFn).fail(errorFn);
+
   // Clear input fields
   document.getElementById("surname").value = "";
   document.getElementById("middleName").value = "";
@@ -107,6 +111,7 @@ function submitForm() {
 }
 
 function retrieving() {
+  $.get(SERVER_URL + "/myGet", successFn).fail(errorFn);
   let retrievedData;
   if (typeof Storage !== "undefined") {
     retrievedData = JSON.parse(window.localStorage.getItem("personal_Info"));
@@ -183,6 +188,4 @@ function toggleDarkMode() {
   body.classList.toggle("dark");
 }
 
-function retrieve(){
-  
-}
+function retrieve() {}

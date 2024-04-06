@@ -1,25 +1,28 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const app = express();
-const PORT = 3000;
 
-// Parse incoming requests with JSON payloads
+const app = express();
+
 app.use(bodyParser.json());
 
-// Route to handle data upload
-app.post("/upload", (req, res) => {
-  const data = req.body; // Uploaded data
-  // Process and store data as needed
-  // Return appropriate response
+// Temporary storage (you should replace this with a proper database)
+let formData = {};
+
+app.post("/submit-form", (req, res) => {
+  const newFormData = req.body;
+
+  // Store the new form data
+  formData = newFormData;
+
+  res.status(200).json({ message: "Form submitted successfully!" });
 });
 
-// Route to handle data download
-app.get("/download", (req, res) => {
-  // Fetch data from server storage
-  // Return data to client
+app.get("/retrieve-form", (req, res) => {
+  // Respond with the stored form data
+  res.status(200).json({ formData });
 });
 
-// Start the server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
