@@ -1,31 +1,33 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const fs = require("fs");
 
 const app = express();
-const PORT = 3050;
+const PORT = process.env.PORT || 3050;
 
 app.use(bodyParser.json());
 
-let serverData = "";
+let serverData = null;
 
+// Route to handle data upload
 app.post("/upload", (req, res) => {
   const { data } = req.body;
   if (!data) {
-    return res.status(400).send("no data reciecved");
+    return res.status(400).send("No data received.");
   }
-  console.log(data);
   serverData = data;
   res.sendStatus(200);
 });
 
+// Route to handle data download
 app.get("/download", (req, res) => {
-  if (serverData) {
-    res.send(serverData);
-  } else {
-    res.status(404).send("No data available for download.");
+  if (!serverData) {
+    return res.status(404).send("No data available for download.");
   }
+  res.send(serverData);
 });
 
+// Start the server
 app.listen(PORT, () => {
-  console.log("Server is running on port " + PORT);
+  console.log(`Server is running on port ${PORT}`);
 });

@@ -1,7 +1,3 @@
-const { response } = require("express");
-
-const SERVER_URL = "https://ugdev.cs.smu.ca:3000";
-
 // Function to toggle the visibility of the expanded content
 function toggleExpandedContent(contentId) {
   let expandedContent = document.getElementById(contentId);
@@ -187,24 +183,53 @@ function toggleDarkMode() {
   body.classList.toggle("dark");
 }
 
-document.getElementById("submit").addEventListener("click", function () {
+function uploadData() {
   const data = localStorage.getItem("personal_Info");
+  if (!data) {
+    console.error("No data available in local storage.");
+    return;
+  }
 
   fetch("/upload", {
     method: "POST",
-    body: JSON.stringify({ data }),
     headers: {
       "Content-Type": "application/json",
     },
-  });
-});
-
-document.getElementById("retrieve").addEventListener("click", function () {
-  fetch("/download")
-    .then((response) => response.json())
-    .then((data) => {
-      localStorage.setItem("personalInfo", JSON.stringify(data));
-      console.log("Data retrieved successfully:", data);
+    body: JSON.stringify({ data }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Data uploaded successfully.");
+      } else {
+        console.error("Failed to upload data.");
+      }
     })
-    .catch((error) => console.error("Error retrieving data:", error));
-});
+    .catch((error) => {
+      console.error("Error uploading data:", error);
+    });
+}
+
+// Function to download data from the server
+function downloadData() {
+  fetch("/download")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to download data.");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      localStorage.setItem("personal_Info", JSON.stringify(data));
+      console.log("Data downloaded successfully:", data);
+      // Populate webpage with downloaded data if needed
+    })
+    .catch((error) => {
+      console.error("Error downloading data:", error);
+    });
+}
+
+// Event listeners for upload and download buttons
+document.getElementById("uploadDataBtn").addEventListener("click", uploadData);
+document
+  .getElementById("downloadDataBtn")
+  .addEventListener("click", downloadData);
