@@ -187,16 +187,22 @@ function toggleDarkMode() {
 
 // Function to upload data to the server
 function uploadData() {
-  const data = JSON.parse(localStorage.getItem("personal_Info"));
-  console.log(data);
-  // Use HTTPS for secure communication
-  $.post(SERVER_URL + "/myPost", data, successFn).fail(function (
-    xhr,
-    status,
-    error
-  ) {
-    console.error("Upload failed:", error);
-  });
+  // Retrieve personal_Info from local storage
+  const personalInfo = JSON.parse(localStorage.getItem("personal_Info"));
+
+  // Check if personalInfo is not null or undefined
+  if (personalInfo) {
+    // Use HTTPS for secure communication
+    $.post(SERVER_URL + "/myPost", { personal_Info: personalInfo }, successFn)
+      .done(function (response) {
+        console.log("Data uploaded successfully:", response);
+      })
+      .fail(function (xhr, status, error) {
+        console.error("Upload failed:", error);
+      });
+  } else {
+    console.error("Personal Info not found in local storage.");
+  }
 }
 
 // Function to download data from the server
