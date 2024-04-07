@@ -67,7 +67,7 @@ server.use(allowCrossDomain);
 */
 server.post("/myPost", function (req, res) {
   // log the "value" in the "name":"value" pair received
-  console.log("req.body.name:" + req.body.name);
+  console.log("req.body.name:" + req.body.surname);
 
   // define a new JSON object to be returned
   let obj = { Terrier: "Milly" };
@@ -97,8 +97,8 @@ server.post("/myPost", function (req, res) {
 */
 server.get("/myGet", function (req, res) {
   // define a new JSON object to be returned
-  let obj = { Setter: "Sage" };
-
+  let obj = { json: JSON.parse(window.localStorage.getItem("personal_Info")) };
+  console.log(obj);
   // access the response object via the reference
   // set the associated status to success
   // place your new JSON object into the response object
