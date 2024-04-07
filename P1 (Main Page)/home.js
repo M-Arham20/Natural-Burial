@@ -1,3 +1,5 @@
+const SERVER_URL = "http://ugdev.cs.smu.ca:3026";
+
 // Function to toggle the visibility of the expanded content
 function toggleExpandedContent(contentId) {
   let expandedContent = document.getElementById(contentId);
@@ -186,48 +188,16 @@ function toggleDarkMode() {
 // Function to upload data to the server
 function uploadData() {
   const data = JSON.parse(localStorage.getItem("personal_Info"));
-  if (!data) {
-    console.error("No data available in local storage.");
-    return;
-  }
-
-  fetch("/upload", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ data }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        console.log("Data uploaded successfully.");
-      } else {
-        console.error("Failed to upload data.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error uploading data:", error);
-    });
+  $.post(SERVER_URL + "/myPost", data, successFn).fail(errorFn);
 }
 
 // Function to download data from the server
 function downloadData() {
-  fetch("/download")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to download data.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      localStorage.setItem("personal_Info", JSON.stringify(data));
-      console.log("Data downloaded successfully:", data);
-      // Populate webpage with downloaded data if needed
-      retrieving(); // Call retrieving function to populate form fields with downloaded data
-    })
-    .catch((error) => {
-      console.error("Error downloading data:", error);
-    });
+  $.get(SERVER_URL + "/myGet", successFn).fail(errorFn);
+}
+
+function successFn(returnedData) {
+  console.log(returnedData);
 }
 
 // Event listeners for upload and download buttons
