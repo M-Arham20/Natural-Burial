@@ -183,8 +183,9 @@ function toggleDarkMode() {
   body.classList.toggle("dark");
 }
 
+// Function to upload data to the server
 function uploadData() {
-  const data = localStorage.getItem("personal_Info");
+  const data = JSON.parse(localStorage.getItem("personal_Info"));
   if (!data) {
     console.error("No data available in local storage.");
     return;
@@ -222,6 +223,7 @@ function downloadData() {
       localStorage.setItem("personal_Info", JSON.stringify(data));
       console.log("Data downloaded successfully:", data);
       // Populate webpage with downloaded data if needed
+      retrieving(); // Call retrieving function to populate form fields with downloaded data
     })
     .catch((error) => {
       console.error("Error downloading data:", error);

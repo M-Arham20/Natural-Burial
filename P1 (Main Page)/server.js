@@ -1,33 +1,51 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const http = require("http");
 const fs = require("fs");
 
-const app = express();
-const PORT = process.env.PORT || 3050;
-
-app.use(bodyParser.json());
-
+// Initialize server data variable
 let serverData = null;
 
-// Route to handle data upload
-app.post("/upload", (req, res) => {
-  const { data } = req.body;
-  if (!data) {
-    return res.status(400).send("No data received.");
+// Function to handle incoming requests
+const server = http.createServer((req, res) => {
+  // Parse URL
+  const url = new URL(req.url, `http://${req.headers.host}`);
+
+  // Handle POST requests to /upload
+  if (req.method === "POST" && url.pathname === "/upload") {
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+    });
+    req.on("end", () => {
+      try {
+        const { data } = JSON.parse(body);
+        serverData = data;
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end("Data uploaded successfully.");
+      } catch (error) {
+        res.writeHead(400, { "Content-Type": "text/plain" });
+        res.end("Error parsing JSON data.");
+      }
+    });
   }
-  serverData = data;
-  res.sendStatus(200);
+  // Handle GET requests to /download
+  else if (req.method === "GET" && url.pathname === "/download") {
+    if (serverData) {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify(serverData));
+    } else {
+      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.end("No data available for download.");
+    }
+  }
+  // Handle other requests
+  else {
+    res.writeHead(404, { "Content-Type": "text/plain" });
+    res.end("Page not found.");
+  }
 });
 
-// Route to handle data download
-app.get("/download", (req, res) => {
-  if (!serverData) {
-    return res.status(404).send("No data available for download.");
-  }
-  res.send(serverData);
-});
-
-// Start the server
-app.listen(PORT, () => {
+// Set the server to listen on port 3050
+const PORT = process.env.PORT || 3050;
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
