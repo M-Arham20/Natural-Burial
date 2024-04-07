@@ -1,4 +1,4 @@
-const SERVER_URL = "http://ugdev.cs.smu.ca:3026";
+const SERVER_URL = "https://ugdev.cs.smu.ca:3026";
 
 // Function to toggle the visibility of the expanded content
 function toggleExpandedContent(contentId) {
@@ -188,12 +188,23 @@ function toggleDarkMode() {
 // Function to upload data to the server
 function uploadData() {
   const data = JSON.parse(localStorage.getItem("personal_Info"));
-  $.post(SERVER_URL + "/myPost", data, successFn).fail(errorFn);
+  console.log(data);
+  // Use HTTPS for secure communication
+  $.post(SERVER_URL + "/myPost", data, successFn).fail(function (
+    xhr,
+    status,
+    error
+  ) {
+    console.error("Upload failed:", error);
+  });
 }
 
 // Function to download data from the server
 function downloadData() {
-  $.get(SERVER_URL + "/myGet", successFn).fail(errorFn);
+  // Use HTTPS for secure communication
+  $.get(SERVER_URL + "/myGet", successFn).fail(function (xhr, status, error) {
+    console.error("Download failed:", error);
+  });
 }
 
 function successFn(returnedData) {
