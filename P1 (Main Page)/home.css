@@ -1,16 +1,55 @@
+/*
+  Purpose: This file provides styles for HTML elements, classes, and ids used in the project.
+  Author(s): 
+Group Leader: Muhammad Arham Mussawar  A00478275
+Muhammad Asfand Yar Khan  A00465145
+Muttyeb Tahir  A00471177
+Subhan Nadeem  A00469690
+*/
+
+/* HTML Elements */
+
+/*
+  Purpose: This section contains styles for HTML elements.
+  Note: This section is empty.
+*/
+/* End of HTML Elements */
+
+/* Classes */
+
+/*
+  Purpose: This section contains styles for classes.
+  .content-auto: optimizes page rendering by avoiding unnecessary rendering of content the user does not immediately need.
+*/
 @layer utilities {
   .content-auto {
-    /* optomizes page rendering by avoiding unnecessary rendering of content 
-       the user does not immediately need */
     content-visibility: auto;
   }
 }
 
-
+/*
+  Purpose: This section contains styles for classes.
+  .w-custom: sets the width to 40em.
+*/
 .w-custom {
   width: 40em;
 }
+
+/*
+  Purpose: This section contains styles for classes.
+  .wi: sets the width to 8em and height to auto.
+*/
 .wi {
   width: 8em;
   height: auto;
 }
+/* End of Classes */
+
+/* Ids */
+
+/*
+  Purpose: This section contains styles for ids.
+  Note: This section is empty.
+*/
+/* End of Ids */
+
