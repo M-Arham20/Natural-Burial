@@ -5,10 +5,6 @@ Group Leader: Muhammad Arham Mussawar  A00478275
 Muhammad Asfand Yar Khan  A00465145
 Muttyeb Tahir  A00471177
 Subhan Nadeem  A00469690
-
-  Note: You must run "npm install express" once in the public_html
-        folder first. You do not need to repeat this step for
-        different servers.
 */
 
 // Importing the Express framework and making it accessible via the reference
@@ -73,4 +69,3 @@ server.get("/myGet", function (req, res) {
 server.listen(port, function () {
   console.log("Listening on port 3026");
 });
-

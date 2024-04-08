@@ -85,6 +85,8 @@ function submitForm() {
   // Store personal info in localStorage
   if (typeof Storage !== "undefined") {
     window.localStorage.setItem("personal_Info", JSON.stringify(data));
+  } else {
+    console.log("Local Storage is not defined");
   }
 
   // Clear selected subscription plan after storing
@@ -109,9 +111,25 @@ function submitForm() {
 }
 
 function retrieving() {
+  let default_Data = {
+    surname: "Smith",
+    middleName: "Micheal",
+    firstName: "John",
+    dob: "2000-11-10",
+    dod: "2022-12-11",
+    place: "London",
+    phone: "123-456-7890",
+  };
   let retrievedData;
-  if (typeof Storage !== "undefined") {
+  if (typeof Storage !== undefined) {
     retrievedData = JSON.parse(window.localStorage.getItem("personal_Info"));
+  } else {
+    console.log("Local Storage is not defined");
+  }
+  if (!retrievedData) {
+    // If no data retrieved, populate with default values
+    retrievedData = default_Data;
+    window.localStorage.setItem("personal_Info", JSON.stringify(retrievedData));
   }
   document.getElementById("surname").value = retrievedData.surname;
   document.getElementById("middleName").value = retrievedData.middleName;
@@ -192,7 +210,7 @@ function uploadData() {
 
   // Check if personalInfo is not null or undefined
   if (personalInfo) {
-    // Use HTTPS for secure communication
+    // Use HTTP for secure communication
     $.post(SERVER_URL + "/myPost", { personal_Info: personalInfo }, successFn)
       .done(function (response) {
         console.log("Data uploaded successfully:", response);
@@ -207,9 +225,55 @@ function uploadData() {
 
 // Function to download data from the server
 function downloadData() {
-  // Use HTTPS for secure communication
+  // Use HTTP for secure communication
   $.get(SERVER_URL + "/myGet", successFn).fail(function (xhr, status, error) {
     console.error("Download failed:", error);
+  });
+  let default_Data = {
+    surname: "Smith",
+    middleName: "Micheal",
+    firstName: "John",
+    dob: "2000-11-10",
+    dod: "2022-12-11",
+    place: "London",
+    phone: "123-456-7890",
+  };
+  let retrievedData;
+  if (typeof Storage !== undefined) {
+    retrievedData = JSON.parse(window.localStorage.getItem("personal_Info"));
+  } else {
+    console.log("Local Storage is not defined");
+  }
+  if (!retrievedData) {
+    // If no data retrieved, populate with default values
+    retrievedData = default_Data;
+    window.localStorage.setItem("personal_Info", JSON.stringify(retrievedData));
+  }
+  document.getElementById("surname").value = retrievedData.surname;
+  document.getElementById("middleName").value = retrievedData.middleName;
+  document.getElementById("firstName").value = retrievedData.firstName;
+  document.getElementById("dob").value = retrievedData.dob;
+  document.getElementById("dod").value = retrievedData.dod;
+  document.getElementById("place").value = retrievedData.place;
+  document.getElementById("phone").value = retrievedData.phone;
+  var selectedDecorations = retrievedData.decorations;
+
+  selectedDecorations.forEach(function (option) {
+    var checkbox = document.querySelector(
+      "input[name='decoration[]'][value='" + option + "']"
+    );
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+  });
+
+  // Select the previously selected casket option
+  var selectedCasket = retrievedData.casket;
+  var casketOptions = document.getElementsByName("casket");
+  casketOptions.forEach(function (option) {
+    if (option.value === selectedCasket) {
+      option.checked = true;
+    }
   });
 }
 
