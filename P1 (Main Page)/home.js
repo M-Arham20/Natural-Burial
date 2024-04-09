@@ -1,4 +1,4 @@
-const SERVER_URL = "http://ugdev.cs.smu.ca:3026";
+const SERVER_URL = "http://ugdev.cs.smu.ca:3069";
 
 // Function to toggle the visibility of the expanded content
 function toggleExpandedContent(contentId) {
