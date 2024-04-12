@@ -138,16 +138,6 @@ function retrieving() {
   document.getElementById("dod").value = retrievedData.dod;
   document.getElementById("place").value = retrievedData.place;
   document.getElementById("phone").value = retrievedData.phone;
-  var selectedDecorations = retrievedData.decorations;
-
-  selectedDecorations.forEach(function (option) {
-    var checkbox = document.querySelector(
-      "input[name='decoration[]'][value='" + option + "']"
-    );
-    if (checkbox) {
-      checkbox.checked = true;
-    }
-  });
 
   // Select the previously selected casket option
   var selectedCasket = retrievedData.casket;
@@ -256,16 +246,6 @@ function downloadData() {
   document.getElementById("dod").value = retrievedData.dod;
   document.getElementById("place").value = retrievedData.place;
   document.getElementById("phone").value = retrievedData.phone;
-  var selectedDecorations = retrievedData.decorations;
-
-  selectedDecorations.forEach(function (option) {
-    var checkbox = document.querySelector(
-      "input[name='decoration[]'][value='" + option + "']"
-    );
-    if (checkbox) {
-      checkbox.checked = true;
-    }
-  });
 
   // Select the previously selected casket option
   var selectedCasket = retrievedData.casket;
