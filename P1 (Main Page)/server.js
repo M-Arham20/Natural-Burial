@@ -58,12 +58,17 @@ server.post("/myPost", function (req, res) {
   return res.status(200).send(personalInfoData);
 });
 
+// This function handles incoming GET requests to the '/myGet' endpoint of the server.
 server.get("/myGet", function (req, res) {
+  // Create an object containing personal information data, likely fetched from a database or another source.
   let obj = { personal_Info: personalInfoData };
+
+  // Log the object to the console for debugging or monitoring purposes.
   console.log(obj);
+
+  // Send the object as a response with a status code of 200 (OK) to the client.
   return res.status(200).send(obj);
 });
-
 /*
   Purpose: This function produces a message on the Node.js console, indicating the server has begun to listen for clients on a port.
 */
