@@ -52,14 +52,30 @@ function submitForm() {
   });
 
   // Gather selected subscription plan
-  var subscriptionPlan = "";
-  var subscriptionPlanOptions = document.querySelectorAll(
-    'input[name="subscriptionPlan"]:checked'
-  );
-  if (subscriptionPlanOptions.length > 0) {
-    subscriptionPlan = subscriptionPlanOptions[0].value;
-  }
+  // var subscriptionPlan = "";
+  // var subscriptionPlanOptions = document.querySelectorAll(
+  //   'input[name="subscriptionPlan"]:checked'
+  // );
+  // if (subscriptionPlanOptions.length > 0) {
+  //   subscriptionPlan = subscriptionPlanOptions[0].value;
+  // }
 
+  var subscriptionPlan = "";
+  var subscriptionPlanOptions = document.getElementsByName("subscriptionPlan");
+  subscriptionPlanOptions.forEach(function (option) {
+    if (option.checked) {
+      subscriptionPlan = option.value;
+      console.log(option.value);
+    }
+  });
+console.log(subscriptionPlan);
+var check;
+subscriptionPlanOptions.forEach(function (option) {
+  if (option.checked) {
+    check = document.getElementById(option);
+    console.log(check);
+  }
+});
   var casket = "";
   var casketOptions = document.getElementsByName("casket");
   casketOptions.forEach(function (option) {
@@ -93,6 +109,10 @@ function submitForm() {
   subscriptionPlanOptions.forEach(function (option) {
     option.checked = false;
   });
+
+  
+  // Remove color from all plans
+  changeColor(subscriptionPlan);
 
   // Clear radio options
   var radioOptions = document.querySelectorAll('input[type="radio"] + label');
@@ -147,6 +167,15 @@ function retrieving() {
       option.checked = true;
     }
   });
+
+  // Select the previously selected plan option
+  var selectedplan = retrievedData.subscriptionPlan;
+  var subscriptionPlanOptions = document.getElementsByName("subscriptionPlan");
+  subscriptionPlanOptions.forEach(function (option) {
+    if (option.value === selectedplan) {
+      option.checked = true;
+    }
+  });
 }
 
 function autoHyphen(input) {
@@ -168,24 +197,20 @@ function autoHyphen(input) {
 }
 
 //fuction for changing the colors
-document.addEventListener("DOMContentLoaded", function () {
-  const radioButtons = document.querySelectorAll(
-    'input[name="subscriptionPlan"]'
-  );
-  radioButtons.forEach((radio) => {
-    radio.addEventListener("change", function () {
-      document.querySelectorAll("#plan1, #plan2, #plan3").forEach((div) => {
-        div.classList.remove("bg-gray-300"); // Remove the color from all plans
-      });
-      if (this.checked) {
-        document
-          .querySelector(`label[for="${this.id}"]`)
-          .closest(".shadow-lg")
-          .classList.add("bg-gray-300"); // Add color to the selected plan
-      }
-    });
+function changeColor(planId) {
+  // List of all plan ids
+  let allPlanIds = ["plan1", "plan2", "plan3"];
+
+  // Remove the class from all plans
+  allPlanIds.forEach(function (id) {
+    let plan = document.getElementById(id);
+    plan.classList.remove("bg-gray-300");
   });
-});
+
+  // Add the class to the selected plan
+  let box = document.getElementById(planId);
+  box.classList.add("bg-gray-300");
+}
 
 // Function to toggle dark mode
 function toggleDarkMode() {
@@ -227,6 +252,7 @@ function downloadData() {
     dod: "2022-12-11",
     place: "London",
     phone: "123-456-7890",
+    subscriptionPlan: "plan1",
   };
   let retrievedData;
   if (typeof Storage !== undefined) {
@@ -253,6 +279,16 @@ function downloadData() {
   casketOptions.forEach(function (option) {
     if (option.value === selectedCasket) {
       option.checked = true;
+    }
+  });
+
+  // Select the previously selected plan option
+  var selectedplan = retrievedData.subscriptionPlan;
+  var subscriptionPlanOptions = document.getElementsByName("subscriptionPlan");
+  subscriptionPlanOptions.forEach(function (option) {
+    if (option.value === selectedplan) {
+      option.checked = true;
+      changeColor(selectedplan);
     }
   });
 }
