@@ -53,13 +53,12 @@ function submitForm() {
 
   // Gather selected subscription plan
   var subscriptionPlan = "";
-  var subscriptionPlanOptions = document.getElementsByName("subscriptionPlan");
-  subscriptionPlanOptions.forEach(function (option) {
-    if (option.checked) {
-      subscriptionPlan = option.value;
-      console.log(option.value);
-    }
-  });
+  var subscriptionPlanOptions = document.querySelectorAll(
+    'input[name="subscriptionPlan"]:checked'
+  );
+  if (subscriptionPlanOptions.length > 0) {
+    subscriptionPlan = subscriptionPlanOptions[0].value;
+  }
 
   var casket = "";
   var casketOptions = document.getElementsByName("casket");
@@ -94,9 +93,6 @@ function submitForm() {
   subscriptionPlanOptions.forEach(function (option) {
     option.checked = false;
   });
-
-  // Remove color from all plans
-  changeColor(subscriptionPlan);
 
   // Clear radio options
   var radioOptions = document.querySelectorAll('input[type="radio"] + label');
