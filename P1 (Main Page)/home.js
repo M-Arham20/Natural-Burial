@@ -52,14 +52,6 @@ function submitForm() {
   });
 
   // Gather selected subscription plan
-  // var subscriptionPlan = "";
-  // var subscriptionPlanOptions = document.querySelectorAll(
-  //   'input[name="subscriptionPlan"]:checked'
-  // );
-  // if (subscriptionPlanOptions.length > 0) {
-  //   subscriptionPlan = subscriptionPlanOptions[0].value;
-  // }
-
   var subscriptionPlan = "";
   var subscriptionPlanOptions = document.getElementsByName("subscriptionPlan");
   subscriptionPlanOptions.forEach(function (option) {
@@ -150,21 +142,22 @@ function retrieving() {
   document.getElementById("dod").value = retrievedData.dod;
   document.getElementById("place").value = retrievedData.place;
   document.getElementById("phone").value = retrievedData.phone;
+  var selectedDecorations = retrievedData.decorations;
+
+  selectedDecorations.forEach(function (option) {
+    var checkbox = document.querySelector(
+      "input[name='decoration[]'][value='" + option + "']"
+    );
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+  });
 
   // Select the previously selected casket option
   var selectedCasket = retrievedData.casket;
   var casketOptions = document.getElementsByName("casket");
   casketOptions.forEach(function (option) {
     if (option.value === selectedCasket) {
-      option.checked = true;
-    }
-  });
-
-  // Select the previously selected plan option
-  var selectedplan = retrievedData.subscriptionPlan;
-  var subscriptionPlanOptions = document.getElementsByName("subscriptionPlan");
-  subscriptionPlanOptions.forEach(function (option) {
-    if (option.value === selectedplan) {
       option.checked = true;
     }
   });
@@ -244,7 +237,7 @@ function downloadData() {
     dod: "2022-12-11",
     place: "London",
     phone: "123-456-7890",
-    subscriptionPlan: "plan1",
+  
   };
   let retrievedData;
   if (typeof Storage !== undefined) {
@@ -264,6 +257,16 @@ function downloadData() {
   document.getElementById("dod").value = retrievedData.dod;
   document.getElementById("place").value = retrievedData.place;
   document.getElementById("phone").value = retrievedData.phone;
+  var selectedDecorations = retrievedData.decorations;
+
+  selectedDecorations.forEach(function (option) {
+    var checkbox = document.querySelector(
+      "input[name='decoration[]'][value='" + option + "']"
+    );
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+  });
 
   // Select the previously selected casket option
   var selectedCasket = retrievedData.casket;
@@ -271,16 +274,6 @@ function downloadData() {
   casketOptions.forEach(function (option) {
     if (option.value === selectedCasket) {
       option.checked = true;
-    }
-  });
-
-  // Select the previously selected plan option
-  var selectedplan = retrievedData.subscriptionPlan;
-  var subscriptionPlanOptions = document.getElementsByName("subscriptionPlan");
-  subscriptionPlanOptions.forEach(function (option) {
-    if (option.value === selectedplan) {
-      option.checked = true;
-      changeColor(selectedplan);
     }
   });
 }
