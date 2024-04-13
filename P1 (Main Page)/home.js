@@ -68,14 +68,7 @@ function submitForm() {
       console.log(option.value);
     }
   });
-console.log(subscriptionPlan);
-var check;
-subscriptionPlanOptions.forEach(function (option) {
-  if (option.checked) {
-    check = document.getElementById(option);
-    console.log(check);
-  }
-});
+
   var casket = "";
   var casketOptions = document.getElementsByName("casket");
   casketOptions.forEach(function (option) {
@@ -110,7 +103,6 @@ subscriptionPlanOptions.forEach(function (option) {
     option.checked = false;
   });
 
-  
   // Remove color from all plans
   changeColor(subscriptionPlan);
 
